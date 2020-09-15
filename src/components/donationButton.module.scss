@@ -1,0 +1,37 @@
+.button {
+	margin-right: 30px;
+	min-width: 225px;
+	background-color: #fff;
+	padding: 10px 30px;
+	border: 3px solid #fff;
+	border-radius: 24px;
+	font-family: Montserrat, sans-serif;
+	font-size: 14px;
+	line-height: 1.5em;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-weight: 700;
+	position: relative;
+	color: #4f4f4f;
+	text-align: center;
+	transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.button:focus {
+	outline: none;
+}
+
+.active {
+	border-color: #0380a6;
+}
+
+.inactive {
+	border-color: #c6ddeb;
+}
+
+.inactive:hover {
+	-webkit-transform: translateX(-5px) translateY(-5px);
+	transform: translateX(-5px) translateY(-5px);
+	border-color: #0380a6;
+	box-shadow: 5px 5px #0380a6;
+}

@@ -1,3 +1,7 @@
+require('dotenv').config({
+	path: '.env',
+});
+
 module.exports = {
 	siteMetadata: {
 		title: `Legal Aid Society`,
@@ -27,8 +31,16 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-google-fonts`,
 			options: {
-				fonts: [`abril fatface`],
+				fonts: [`abril fatface`, `montserrat\:400,700`],
 				display: 'swap',
+			},
+		},
+		{
+			resolve: `gatsby-source-stripe`,
+			options: {
+				objects: ['Price'],
+				secretKey: process.env.STRIPE_SECRET_KEY,
+				downloadFiles: false,
 			},
 		},
 	],

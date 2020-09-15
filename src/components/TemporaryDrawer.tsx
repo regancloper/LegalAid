@@ -26,14 +26,15 @@ const useStyles = makeStyles({
 		position: 'absolute',
 		// right: '2em', // envelope style button
 		// top: '2.2em', // envelope style button
-		right: '1em',
-		top: '0.5em',
-		backgroundColor: '#303030',
+		right: '1em', // regular style button
+		top: '0.75em', // regular style button
+		// backgroundColor: '#0e385d',
+		backgroundColor: '#036380',
 		color: '#fff',
-		width: '3.5rem',
-		height: '3.5rem',
+		width: '3rem',
+		height: '3rem',
 		'&:hover': {
-			backgroundColor: 'indianred',
+			backgroundColor: '#d9d9d9',
 			color: '#000',
 		},
 		'&:focus': {
