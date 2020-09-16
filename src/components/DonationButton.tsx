@@ -16,14 +16,18 @@ const DonationButton: React.FC<DonationButtonProps> = ({
 }) => {
 	return (
 		<button
-			className={
-				active
-					? cx(donationButtonStyles.button, donationButtonStyles.active)
-					: cx(donationButtonStyles.button, donationButtonStyles.inactive)
-			}
+			className={donationButtonStyles.button}
 			onClick={() => setOneTimeDonation(text === 'Monthly' ? false : true)}
 		>
-			{text}
+			<span
+				className={
+					active
+						? cx(donationButtonStyles.buttonSpan, donationButtonStyles.active)
+						: cx(donationButtonStyles.buttonSpan, donationButtonStyles.inactive)
+				}
+			>
+				{text}
+			</span>
 		</button>
 	);
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
@@ -13,7 +14,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles({
 	list: {
-		width: 250,
+		width: '50vw',
 		// height: '100vh',
 		// backgroundColor: '#076666',
 		// color: '#fff',
@@ -23,18 +24,20 @@ const useStyles = makeStyles({
 	},
 	menuButton: {
 		// marginRight: theme.spacing(2),
-		position: 'absolute',
+		// position: 'absolute',
 		// right: '2em', // envelope style button
 		// top: '2.2em', // envelope style button
-		right: '1em', // regular style button
-		top: '0.75em', // regular style button
+		// right: '1em', // regular style button
+		// top: '0.75em', // regular style button
 		// backgroundColor: '#0e385d',
-		backgroundColor: '#036380',
+		// backgroundColor: '#036380',
+		backgroundColor: 'rgba(0, 0, 0, 0.7)',
 		color: '#fff',
 		width: '3rem',
 		height: '3rem',
 		'&:hover': {
-			backgroundColor: '#d9d9d9',
+			// backgroundColor: '#d9d9d9',
+			backgroundColor: '#6ab4ca',
 			color: '#000',
 		},
 		'&:focus': {
@@ -69,14 +72,22 @@ export default function TemporaryDrawer() {
 			onKeyDown={toggleDrawer(false)}
 		>
 			<List>
-				{['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-					<ListItem button key={text}>
+				<Link to="/donate">
+					<ListItem button>
 						<ListItemIcon>
-							{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+							<InboxIcon />
 						</ListItemIcon>
-						<ListItemText primary={text} />
+						<ListItemText primary="Donate" />
 					</ListItem>
-				))}
+				</Link>
+				<Link to="/people">
+					<ListItem button>
+						<ListItemIcon>
+							<MailIcon />
+						</ListItemIcon>
+						<ListItemText primary="People" />
+					</ListItem>
+				</Link>
 			</List>
 			<Divider />
 			<List>

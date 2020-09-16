@@ -3,13 +3,15 @@
 	font-size: 3.5rem;
 	font-weight: 400;
 	text-align: center;
+	margin-bottom: 1em;
+	margin-top: 1em;
 }
 
-.headerBorder {
+.staffHeader::after {
 	content: '';
-	width: 4rem;
-	height: 1em;
-	border-bottom: 1px solid black;
+	width: 6rem;
+	display: block;
+	border-bottom: 1px solid;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 1rem;

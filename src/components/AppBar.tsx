@@ -4,10 +4,10 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import TemporaryDrawer from './TemporaryDrawer';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
 
 // @ts-ignore
 import logo from '../images/logo.png';
+import { Container } from '@material-ui/core';
 
 interface ButtonAppBarProps {}
 
@@ -24,8 +24,10 @@ const useStyles = makeStyles({
 		// backgroundColor: '#f5f5f5',
 		backgroundColor: '#fff',
 		color: '#303030',
-		// boxShadow: '0px 0px',
-		height: '5rem',
+		boxShadow: '0px 0px',
+		height: '6rem',
+		// borderBottom: '1px solid #b6c3cc',
+		justifyContent: 'center',
 	},
 });
 
@@ -46,22 +48,24 @@ const ButtonAppBar: React.FC<ButtonAppBarProps> = () => {
 	return (
 		<div className={classes.root}>
 			<AppBar position="fixed" className={classes.header}>
-				<Toolbar>
-					{/* <div style={{ width: '20vw' }}> */}
-					<Link to="/">
-						{/* <span>{data.logoImage.absolutePath}</span> */}
-						{/* <Img fluid={data.logoImage.childImageSharp.fluid} /> */}
-						<img
-							src={logo}
-							alt="Our logo"
-							style={{ width: '250px', height: '5rem' }}
-						/>
-					</Link>
-					<Link to="/donate">Donate</Link>
-					<Link to="/people">People</Link>
-					{/* </div> */}
-					<TemporaryDrawer />
-				</Toolbar>
+				<Container>
+					<Toolbar className="justify-content-between">
+						{/* <div style={{ width: '20vw' }}> */}
+						<Link to="/">
+							{/* <span>{data.logoImage.absolutePath}</span> */}
+							{/* <Img fluid={data.logoImage.childImageSharp.fluid} /> */}
+							<img
+								src={logo}
+								alt="Our logo"
+								style={{ width: '230px', height: '4.5rem' }}
+							/>
+						</Link>
+						{/* <Link to="/donate">Donate</Link> */}
+						{/* <Link to="/people">People</Link> */}
+						{/* </div> */}
+						<TemporaryDrawer />
+					</Toolbar>
+				</Container>
 			</AppBar>
 		</div>
 	);

@@ -1,9 +1,32 @@
 .button {
 	margin-right: 30px;
 	min-width: 225px;
+	position: relative;
+	z-index: 2;
+	padding: 0;
+	border: 0;
+	background-color: transparent;
+}
+
+.button::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translateY(-50%) translateX(-50%);
+	transform: translateY(-50%) translateX(-50%);
+	background-color: #0380a6;
+	border-radius: 24px;
+	width: 98%;
+	height: 98%;
+	z-index: 1;
+}
+
+.buttonSpan {
+	display: block;
 	background-color: #fff;
 	padding: 10px 30px;
-	border: 3px solid #fff;
+	border: 3px solid #0380a6;
 	border-radius: 24px;
 	font-family: Montserrat, sans-serif;
 	font-size: 14px;
@@ -11,10 +34,16 @@
 	letter-spacing: 2px;
 	text-transform: uppercase;
 	font-weight: 700;
-	position: relative;
 	color: #4f4f4f;
 	text-align: center;
+	position: relative;
+	-webkit-transform: translateX(0) translateY(0);
+	transform: translateX(0) translateY(0);
+	-webkit-transition: -webkit-transform 0.3s ease;
+	transition: -webkit-transform 0.3s ease;
+	transition: transform 0.3s ease;
 	transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+	z-index: 2;
 }
 
 .button:focus {
@@ -29,9 +58,8 @@
 	border-color: #c6ddeb;
 }
 
-.inactive:hover {
+.buttonSpan.inactive:hover {
 	-webkit-transform: translateX(-5px) translateY(-5px);
 	transform: translateX(-5px) translateY(-5px);
-	border-color: #0380a6;
-	box-shadow: 5px 5px #0380a6;
+	border: 3px solid #0380a6;
 }

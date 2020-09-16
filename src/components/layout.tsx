@@ -13,14 +13,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 	return (
 		<div>
 			<AppBar />
-			<Container className="p-0 mt-5">
-				<div className={layoutStyles.content}>{children}</div>
-			</Container>
-			<Container className={layoutStyles.footer} fluid>
-				<Container className="p-0">
-					<Footer />
-				</Container>
-			</Container>
+			<div className={layoutStyles.content}>{children}</div>
+			<div className={layoutStyles.footer}>
+				<Footer />
+			</div>
 		</div>
 	);
 };

@@ -79,7 +79,7 @@ const Products: React.FC<ProductsProps> = () => {
 				return (
 					<div>
 						{/* Buttons that control donation type */}
-						<div className="text-center my-5">
+						<div className={productsStyles.donationSelector}>
 							<DonationButton
 								text="Monthly"
 								active={!oneTimeDonation}

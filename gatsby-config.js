@@ -31,7 +31,11 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-google-fonts`,
 			options: {
-				fonts: [`abril fatface`, `montserrat\:400,700`],
+				fonts: [
+					`abril fatface`,
+					`montserrat\:400,700`,
+					`fira sans\:100,200,300,400,700`,
+				],
 				display: 'swap',
 			},
 		},

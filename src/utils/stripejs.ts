@@ -7,7 +7,7 @@ let stripePromise: any;
 const getStripe = () => {
 	if (!stripePromise) {
 		stripePromise = loadStripe(
-			process.env.GATSBY_STRIPE_PUBLISHABLE_KEY as string
+			String(process.env.GATSBY_STRIPE_PUBLISHABLE_KEY)
 		);
 	}
 	return stripePromise;

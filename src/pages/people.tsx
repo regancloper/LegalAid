@@ -41,7 +41,6 @@ const PeoplePage: React.FC<PeoplePageProps> = () => {
 			<Head title="Our People" />
 			<Container>
 				<h2 className={peopleStyles.staffHeader}>Our Staff</h2>
-				<span className={peopleStyles.headerBorder}></span>
 				<Row>
 					{data.allContentfulStaffMember.nodes.map((node: any) => (
 						<Col xs={6} md={4} lg={3} key={node.id} className="my-2">

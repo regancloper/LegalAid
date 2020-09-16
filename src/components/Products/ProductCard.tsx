@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import getStripe from '../../utils/stripejs';
 import { StripeNode } from '../../utils/types';
+import cx from 'classnames';
 
 import productCardStyles from './productcard.module.scss';
 
@@ -37,13 +38,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
 	};
 
 	return (
-		<div className={productCardStyles.cardStyles}>
-			<form onSubmit={handleSubmit}>
-				<h4>{option.product.name}</h4>
+		<form onSubmit={handleSubmit}>
+			<div className={productCardStyles.cardStyles}>
+				<h4 style={{ padding: '1rem' }}>{option.product.name}</h4>
 				{flexible && (
 					<p>
 						$
 						<input
+							required
 							className={productCardStyles.input}
 							placeholder="100"
 							type="number"
@@ -56,14 +58,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
 					disabled={loading}
 					className={
 						loading
-							? productCardStyles.buttonDisabledStyles
+							? cx(
+									productCardStyles.buttonStyles,
+									productCardStyles.buttonDisabledStyles
+							  )
 							: productCardStyles.buttonStyles
 					}
 				>
 					Donate!
 				</button>
-			</form>
-		</div>
+			</div>
+		</form>
 	);
 };
 
