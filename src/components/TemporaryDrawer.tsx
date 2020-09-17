@@ -2,49 +2,78 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import { IconButton } from '@material-ui/core';
+import { Container, createStyles, IconButton, Theme } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
+import { ListGroup } from 'react-bootstrap';
+import CloseIcon from '@material-ui/icons/Close';
 
-const useStyles = makeStyles({
-	list: {
-		width: '50vw',
-		// height: '100vh',
-		// backgroundColor: '#076666',
-		// color: '#fff',
-	},
-	fullList: {
-		width: 'auto',
-	},
-	menuButton: {
-		// marginRight: theme.spacing(2),
-		// position: 'absolute',
-		// right: '2em', // envelope style button
-		// top: '2.2em', // envelope style button
-		// right: '1em', // regular style button
-		// top: '0.75em', // regular style button
-		// backgroundColor: '#0e385d',
-		// backgroundColor: '#036380',
-		backgroundColor: 'rgba(0, 0, 0, 0.7)',
-		color: '#fff',
-		width: '3rem',
-		height: '3rem',
-		'&:hover': {
-			// backgroundColor: '#d9d9d9',
-			backgroundColor: '#6ab4ca',
-			color: '#000',
+import MenuHeader from './MenuHeader';
+
+const useStyles = makeStyles((theme: Theme) =>
+	createStyles({
+		list: {
+			[theme.breakpoints.down('xs')]: {
+				width: '100vw',
+			},
+			[theme.breakpoints.up('sm')]: {
+				width: 500,
+			},
+			minHeight: '100vh',
+			backgroundColor: '#076666',
+			color: '#fff',
 		},
-		'&:focus': {
-			outline: 'none',
+		fullList: {
+			width: 'auto',
 		},
-	},
-});
+		menuButton: {
+			backgroundColor: 'rgba(0, 0, 0, 0.7)',
+			color: '#fff',
+			width: '3rem',
+			height: '3rem',
+			'&:hover': {
+				backgroundColor: '#d9d9d9',
+				// backgroundColor: '#6ab4ca',
+				color: '#000',
+			},
+			'&:focus': {
+				outline: 'none',
+			},
+		},
+		header: {
+			fontFamily: 'Abril Fatface',
+			margin: '1.5em 0.5em 0.5em 0.5em',
+			borderBottom: '1px solid white',
+			paddingBottom: '0.5rem',
+		},
+		listGroup: {
+			margin: '1em 1em',
+		},
+		listGroupItem: {
+			fontFamily: 'Fira Sans, sans serif',
+			backgroundColor: '#076666',
+			letterSpacing: '2px',
+			textTransform: 'uppercase',
+			fontSize: '0.8rem',
+			fontWeight: 700,
+			borderColor: 'rgba(255, 255, 255, 0.2)',
+			textDecoration: 'none',
+			padding: '0.75rem 0',
+			margin: '0 1.2em',
+			borderTop: 'none',
+			borderLeft: 'none',
+			borderRight: 'none',
+		},
+		link: {
+			textDecoration: 'none',
+			color: 'white',
+			'&:hover': {
+				color: 'white',
+				opacity: 0.6,
+				textDecoration: 'none',
+			},
+		},
+	})
+);
 
 export default function TemporaryDrawer() {
 	const classes = useStyles();
@@ -68,38 +97,54 @@ export default function TemporaryDrawer() {
 		<div
 			className={classes.list}
 			role="presentation"
-			onClick={toggleDrawer(false)}
 			onKeyDown={toggleDrawer(false)}
 		>
-			<List>
-				<Link to="/donate">
-					<ListItem button>
-						<ListItemIcon>
-							<InboxIcon />
-						</ListItemIcon>
-						<ListItemText primary="Donate" />
-					</ListItem>
-				</Link>
-				<Link to="/people">
-					<ListItem button>
-						<ListItemIcon>
-							<MailIcon />
-						</ListItemIcon>
-						<ListItemText primary="People" />
-					</ListItem>
-				</Link>
-			</List>
-			<Divider />
-			<List>
-				{['All mail', 'Trash', 'Spam'].map((text, index) => (
-					<ListItem button key={text}>
-						<ListItemIcon>
-							{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-						</ListItemIcon>
-						<ListItemText primary={text} />
-					</ListItem>
-				))}
-			</List>
+			<div className="d-flex justify-content-end pr-3 pt-3">
+				<CloseIcon
+					onClick={toggleDrawer(false)}
+					style={{ cursor: 'pointer' }}
+				/>
+			</div>
+			<Container>
+				<div className={classes.listGroup}>
+					{/* <h2 className={classes.header}>Site Contents</h2> */}
+					<MenuHeader text="Site Contents" />
+					<ListGroup variant="flush">
+						<Link to="/" className={classes.link} onClick={toggleDrawer(false)}>
+							<ListGroup.Item className={classes.listGroupItem}>
+								Home
+							</ListGroup.Item>
+						</Link>
+						<Link
+							to="/donate"
+							className={classes.link}
+							onClick={toggleDrawer(false)}
+						>
+							<ListGroup.Item className={classes.listGroupItem}>
+								Donate
+							</ListGroup.Item>
+						</Link>
+						<ListGroup.Item className={classes.listGroupItem}>
+							What We Do
+						</ListGroup.Item>
+						<Link
+							to="/people"
+							className={classes.link}
+							onClick={toggleDrawer(false)}
+						>
+							<ListGroup.Item className={classes.listGroupItem}>
+								Our People
+							</ListGroup.Item>
+						</Link>
+						<Link to="/" className={classes.link}>
+							<ListGroup.Item className={classes.listGroupItem}>
+								Contact Us
+							</ListGroup.Item>
+						</Link>
+					</ListGroup>
+					<MenuHeader text="Publications" />
+				</div>
+			</Container>
 		</div>
 	);
 

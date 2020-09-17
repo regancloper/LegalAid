@@ -1,0 +1,30 @@
+.header {
+	font-family: 'Abril Fatface', serif;
+	margin-top: 1rem;
+	font-size: 1.8rem;
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	-webkit-box-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	align-items: center;
+}
+
+.header::before {
+	content: '';
+	height: 1px;
+	border-top: 1px solid;
+	flex: 1 0 0%;
+	margin-left: 16px;
+	margin-right: 10px;
+}
+
+.header::after {
+	content: '';
+	height: 1px;
+	border-top: 1px solid;
+	flex: 1 0 0%;
+	margin-right: 16px;
+	margin-left: 10px;
+}

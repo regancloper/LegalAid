@@ -69,7 +69,7 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 					</Container>
 				</BackgroundImage>
 			</div>
-			<div>
+			<div className="mb-4">
 				<Container>
 					<Row>
 						<Col md={5}>
@@ -110,6 +110,25 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 				<Container>
 					<h3 className={indexStyles.headerThree}>
 						Services that we offer our clients.
+					</h3>
+					<Row className="px-5">
+						<Col></Col>
+						<Col className={indexStyles.firstBox}></Col>
+						<Col className={indexStyles.secondBox}></Col>
+						<Col></Col>
+					</Row>
+					<Row className="px-5">
+						<Col></Col>
+						<Col className={indexStyles.secondBox}></Col>
+						<Col className={indexStyles.firstBox}></Col>
+						<Col></Col>
+					</Row>
+				</Container>
+			</div>
+			<div className={indexStyles.greyContainer}>
+				<Container>
+					<h3 className={indexStyles.headerFour}>
+						...and services we don't offer:
 					</h3>
 					<hr className={indexStyles.hr} />
 				</Container>
