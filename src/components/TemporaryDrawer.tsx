@@ -4,8 +4,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import { Container, createStyles, IconButton, Theme } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import { ListGroup } from 'react-bootstrap';
+import { Dropdown, ListGroup, NavItem, NavLink } from 'react-bootstrap';
 import CloseIcon from '@material-ui/icons/Close';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 import MenuHeader from './MenuHeader';
 
@@ -72,12 +74,29 @@ const useStyles = makeStyles((theme: Theme) =>
 				textDecoration: 'none',
 			},
 		},
+		chevron: {
+			cursor: 'pointer',
+			display: 'flex',
+			justifyContent: 'space-between',
+			'&:hover': {
+				color: 'white',
+				opacity: 0.6,
+				textDecoration: 'none',
+			},
+		},
+		chevronButton: {
+			position: 'absolute',
+			height: '3rem',
+			top: '-1px',
+			right: '0px',
+		},
 	})
 );
 
 export default function TemporaryDrawer() {
 	const classes = useStyles();
 	const [open, setOpen] = React.useState(false);
+	const [aboutList, setAboutList] = React.useState(false);
 
 	const toggleDrawer = (open: boolean) => (
 		event: React.KeyboardEvent | React.MouseEvent
@@ -91,6 +110,10 @@ export default function TemporaryDrawer() {
 		}
 
 		setOpen(open);
+	};
+
+	const toggleAboutList = () => {
+		setAboutList(!aboutList);
 	};
 
 	const list = () => (
@@ -125,8 +148,60 @@ export default function TemporaryDrawer() {
 							</ListGroup.Item>
 						</Link>
 						<ListGroup.Item className={classes.listGroupItem}>
-							What We Do
+							Our Services
 						</ListGroup.Item>
+						<ListGroup.Item className={classes.listGroupItem}>
+							<div className={classes.chevron} onClick={toggleAboutList}>
+								About Us
+								<div>
+									{aboutList ? (
+										<KeyboardArrowDownIcon className={classes.chevronButton} />
+									) : (
+										<ChevronRightIcon className={classes.chevronButton} />
+									)}
+								</div>
+							</div>
+						</ListGroup.Item>
+						{aboutList && (
+							<div>
+								<Link
+									to="/people"
+									className={classes.link}
+									onClick={toggleDrawer(false)}
+								>
+									<ListGroup.Item
+										className={classes.listGroupItem}
+										style={{ paddingLeft: '2em' }}
+									>
+										Our Story
+									</ListGroup.Item>
+								</Link>
+								<Link to="/" className={classes.link}>
+									<ListGroup.Item
+										className={classes.listGroupItem}
+										style={{ paddingLeft: '2em' }}
+									>
+										Mission
+									</ListGroup.Item>
+								</Link>
+								<Link to="/" className={classes.link}>
+									<ListGroup.Item
+										className={classes.listGroupItem}
+										style={{ paddingLeft: '2em' }}
+									>
+										Staff
+									</ListGroup.Item>
+								</Link>
+								<Link to="/" className={classes.link}>
+									<ListGroup.Item
+										className={classes.listGroupItem}
+										style={{ paddingLeft: '2em' }}
+									>
+										Board of Directors
+									</ListGroup.Item>
+								</Link>
+							</div>
+						)}
 						<Link
 							to="/people"
 							className={classes.link}
@@ -136,7 +211,7 @@ export default function TemporaryDrawer() {
 								Our People
 							</ListGroup.Item>
 						</Link>
-						<Link to="/" className={classes.link}>
+						<Link to="/contact" className={classes.link}>
 							<ListGroup.Item className={classes.listGroupItem}>
 								Contact Us
 							</ListGroup.Item>

@@ -15,7 +15,7 @@
 	left: 50%;
 	-webkit-transform: translateY(-50%) translateX(-50%);
 	transform: translateY(-50%) translateX(-50%);
-	background-color: #0380a6;
+	background-color: #076666;
 	border-radius: 24px;
 	width: 98%;
 	height: 98%;
@@ -26,14 +26,14 @@
 	display: block;
 	background-color: #fff;
 	padding: 10px 30px;
-	border: 3px solid #0380a6;
+	// border: 3px solid #076666;
 	border-radius: 24px;
-	font-family: Montserrat, sans-serif;
-	font-size: 14px;
-	line-height: 1.5em;
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	font-weight: 700;
+	font-family: Fira Sans, sans-serif;
+	// line-height: 1.5em;
+	font-size: 1.1em;
+	font-weight: 300;
+	// text-transform: uppercase;
+	// font-weight: 700;
 	color: #4f4f4f;
 	text-align: center;
 	position: relative;
@@ -51,15 +51,16 @@
 }
 
 .active {
-	border-color: #0380a6;
+	background-color: #076666;
+	color: #fff;
 }
 
 .inactive {
-	border-color: #c6ddeb;
+	background-color: #fff;
 }
 
 .buttonSpan.inactive:hover {
 	-webkit-transform: translateX(-5px) translateY(-5px);
 	transform: translateX(-5px) translateY(-5px);
-	border: 3px solid #0380a6;
+	// border: 3px solid #076666;
 }
