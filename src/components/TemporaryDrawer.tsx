@@ -4,10 +4,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import { Container, createStyles, IconButton, Theme } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Dropdown, ListGroup, NavItem, NavLink } from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
 import CloseIcon from '@material-ui/icons/Close';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import FacebookIcon from '@material-ui/icons/Facebook';
 
 import MenuHeader from './MenuHeader';
 
@@ -28,7 +29,8 @@ const useStyles = makeStyles((theme: Theme) =>
 			width: 'auto',
 		},
 		menuButton: {
-			backgroundColor: 'rgba(0, 0, 0, 0.7)',
+			// backgroundColor: 'rgba(0, 0, 0, 0.7)',
+			backgroundColor: '#002b4e',
 			color: '#fff',
 			width: '3rem',
 			height: '3rem',
@@ -64,15 +66,16 @@ const useStyles = makeStyles((theme: Theme) =>
 			borderTop: 'none',
 			borderLeft: 'none',
 			borderRight: 'none',
-		},
-		link: {
-			textDecoration: 'none',
-			color: 'white',
+			transition: 'opacity 0.6s ease 0s',
 			'&:hover': {
 				color: 'white',
 				opacity: 0.6,
 				textDecoration: 'none',
 			},
+		},
+		link: {
+			// textDecoration: 'none',
+			color: 'white',
 		},
 		chevron: {
 			cursor: 'pointer',
@@ -89,6 +92,17 @@ const useStyles = makeStyles((theme: Theme) =>
 			height: '3rem',
 			top: '-1px',
 			right: '0px',
+		},
+		facebookLink: {
+			cursor: 'pointer',
+			color: '#fff',
+			fontSize: '2em',
+			transition: 'opacity 0.6s ease 0s',
+			'&:hover': {
+				color: 'white',
+				opacity: 0.6,
+				textDecoration: 'none',
+			},
 		},
 	})
 );
@@ -130,7 +144,6 @@ export default function TemporaryDrawer() {
 			</div>
 			<Container>
 				<div className={classes.listGroup}>
-					{/* <h2 className={classes.header}>Site Contents</h2> */}
 					<MenuHeader text="Site Contents" />
 					<ListGroup variant="flush">
 						<Link to="/" className={classes.link} onClick={toggleDrawer(false)}>
@@ -197,7 +210,7 @@ export default function TemporaryDrawer() {
 										className={classes.listGroupItem}
 										style={{ paddingLeft: '2em' }}
 									>
-										Board of Directors
+										Board of Trustees
 									</ListGroup.Item>
 								</Link>
 							</div>
@@ -211,13 +224,25 @@ export default function TemporaryDrawer() {
 								Our People
 							</ListGroup.Item>
 						</Link>
-						<Link to="/contact" className={classes.link}>
+						<Link
+							to="/contact"
+							className={classes.link}
+							onClick={toggleDrawer(false)}
+						>
 							<ListGroup.Item className={classes.listGroupItem}>
 								Contact Us
 							</ListGroup.Item>
 						</Link>
 					</ListGroup>
-					<MenuHeader text="Publications" />
+					<div className="d-flex justify-content-center my-4 mr-2">
+						<a
+							href="https://www.facebook.com/"
+							style={{ textDecoration: 'none' }}
+						>
+							<FacebookIcon className={classes.facebookLink} />
+						</a>
+					</div>
+					<MenuHeader text="Recent News" />
 				</div>
 			</Container>
 		</div>

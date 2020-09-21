@@ -3,8 +3,9 @@ import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import Products from '../components/Products/Products';
-import donateStyles from './donate.module.scss';
 import Head from '../components/head';
+import PageHeader from '../components/PageHeader';
+import { Container } from 'react-bootstrap';
 
 interface DonateProps {}
 
@@ -12,9 +13,11 @@ const Donate: React.FC<DonateProps> = ({}) => {
 	return (
 		<Layout>
 			<Head title="Donate" />
-			<h2 className={donateStyles.header}>Donate</h2>
-			<Products />
-			<Link to="/">Go to home page</Link>
+			<Container>
+				<PageHeader text="Donate" />
+				<Products />
+				<Link to="/">Go to home page</Link>
+			</Container>
 		</Layout>
 	);
 };

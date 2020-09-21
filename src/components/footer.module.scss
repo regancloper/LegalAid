@@ -1,9 +1,66 @@
 .footer {
+	font-family: 'Fira Sans', sans-serif;
 	margin-top: 3rem;
+	padding-top: 1em;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	min-height: 10rem;
 	background-color: #002b4e;
 	color: #fff;
+}
+
+.topLevel {
+	margin-bottom: 1em;
+	margin-top: 2em;
+	letter-spacing: 2px;
+}
+
+.list {
+	list-style: none;
+	padding-left: 0;
+	font-weight: 300;
+}
+
+.lowerLevel {
+	font-weight: 300;
+}
+
+.link {
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.1em;
+	font-weight: 200;
+}
+
+.link:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+.copyright {
+	margin-bottom: 0;
+	margin-top: 1em;
+	font-weight: 300;
+}
+
+.credit {
+	font-weight: 100;
+	opacity: 0.8;
+	margin-bottom: 3em;
+}
+
+.articleTitle {
+	font-weight: 700;
+	// margin-top: 1rem;
+	font-size: 1.2rem;
+}
+
+.readMore {
+	font-weight: 100;
+	text-transform: uppercase;
+}
+
+.newsItem {
+	margin-bottom: 5px;
 }
