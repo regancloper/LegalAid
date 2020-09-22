@@ -13,7 +13,7 @@ const Footer: React.FC<FooterProps> = () => {
 		<footer className={footerStyles.footer}>
 			<Container>
 				<Row>
-					<Col sm={6} md={5}>
+					<Col sm={6} md={5} lg={4}>
 						<div className={footerStyles.topLevel}>HOW TO REACH US</div>
 						<p className={`${footerStyles.lowerLevel} mr-5`}>
 							<div className="my-4">

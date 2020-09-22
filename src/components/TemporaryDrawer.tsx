@@ -178,7 +178,7 @@ export default function TemporaryDrawer() {
 						{aboutList && (
 							<div>
 								<Link
-									to="/people"
+									to="/our-story"
 									className={classes.link}
 									onClick={toggleDrawer(false)}
 								>
@@ -189,7 +189,7 @@ export default function TemporaryDrawer() {
 										Our Story
 									</ListGroup.Item>
 								</Link>
-								<Link to="/" className={classes.link}>
+								<Link to="/mission" className={classes.link}>
 									<ListGroup.Item
 										className={classes.listGroupItem}
 										style={{ paddingLeft: '2em' }}
@@ -197,7 +197,7 @@ export default function TemporaryDrawer() {
 										Mission
 									</ListGroup.Item>
 								</Link>
-								<Link to="/" className={classes.link}>
+								<Link to="/staff" className={classes.link}>
 									<ListGroup.Item
 										className={classes.listGroupItem}
 										style={{ paddingLeft: '2em' }}
