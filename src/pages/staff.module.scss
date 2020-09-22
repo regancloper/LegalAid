@@ -1,21 +1,3 @@
-.staffHeader {
-	font-family: 'Abril Fatface', serif;
-	font-size: 3.5rem;
-	font-weight: 400;
-	text-align: center;
-	margin-top: 1em;
-}
-
-.staffHeader::after {
-	content: '';
-	width: 6rem;
-	display: block;
-	border-bottom: 1px solid;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 1rem;
-}
-
 .staffSubheader {
 	font-family: 'Fira Sans', sans-serif;
 	text-align: center;

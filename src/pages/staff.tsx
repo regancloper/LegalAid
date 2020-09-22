@@ -6,6 +6,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import Layout from '../components/layout';
 import Head from '../components/head';
 import staffStyles from './staff.module.scss';
+import PageHeader from '../components/PageHeader';
 
 interface StaffPageProps {}
 
@@ -66,7 +67,7 @@ const StaffPage: React.FC<StaffPageProps> = () => {
 		<Layout>
 			<Head title="Our Staff" />
 			<Container>
-				<h2 className={staffStyles.staffHeader}>Our Staff</h2>
+				<PageHeader text="Our Staff" />
 				<h5 className={staffStyles.staffSubheader}>Administrative Team</h5>
 				<Row>
 					{data.administrative.nodes.map((node: any) => (

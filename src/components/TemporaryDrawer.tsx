@@ -205,7 +205,7 @@ export default function TemporaryDrawer() {
 										Staff
 									</ListGroup.Item>
 								</Link>
-								<Link to="/" className={classes.link}>
+								<Link to="/board" className={classes.link}>
 									<ListGroup.Item
 										className={classes.listGroupItem}
 										style={{ paddingLeft: '2em' }}
