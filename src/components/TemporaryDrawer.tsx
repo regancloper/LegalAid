@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			paddingBottom: '0.5rem',
 		},
 		listGroup: {
-			margin: '1em 1em',
+			margin: '1em 2em',
 		},
 		listGroupItem: {
 			fontFamily: 'Fira Sans, sans serif',
@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			borderColor: 'rgba(255, 255, 255, 0.2)',
 			textDecoration: 'none',
 			padding: '0.75rem 0',
-			margin: '0 1.2em',
+			// margin: '0 1.2em',
 			borderTop: 'none',
 			borderLeft: 'none',
 			borderRight: 'none',
@@ -143,9 +143,9 @@ export default function TemporaryDrawer() {
 				/>
 			</div>
 			<Container>
-				<div className={classes.listGroup}>
+				<div>
 					<MenuHeader text="Site Contents" />
-					<ListGroup variant="flush">
+					<ListGroup variant="flush" className={classes.listGroup}>
 						<Link to="/" className={classes.link} onClick={toggleDrawer(false)}>
 							<ListGroup.Item className={classes.listGroupItem}>
 								Home
@@ -160,9 +160,15 @@ export default function TemporaryDrawer() {
 								Donate
 							</ListGroup.Item>
 						</Link>
-						<ListGroup.Item className={classes.listGroupItem}>
-							Our Services
-						</ListGroup.Item>
+						<Link
+							to="/services"
+							className={classes.link}
+							onClick={toggleDrawer(false)}
+						>
+							<ListGroup.Item className={classes.listGroupItem}>
+								Our Services
+							</ListGroup.Item>
+						</Link>
 						<ListGroup.Item className={classes.listGroupItem}>
 							<div className={classes.chevron} onClick={toggleAboutList}>
 								About Us
@@ -215,13 +221,9 @@ export default function TemporaryDrawer() {
 								</Link>
 							</div>
 						)}
-						<Link
-							to="/people"
-							className={classes.link}
-							onClick={toggleDrawer(false)}
-						>
+						<Link to="/" className={classes.link} onClick={toggleDrawer(false)}>
 							<ListGroup.Item className={classes.listGroupItem}>
-								Our People
+								Newsroom
 							</ListGroup.Item>
 						</Link>
 						<Link

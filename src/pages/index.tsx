@@ -8,6 +8,7 @@ import Layout from '../components/layout';
 import Head from '../components/head';
 import indexStyles from './index.module.scss';
 import RoundedButton from '../components/RoundedButton';
+import ServicesOffered from '../components/ServicesOffered';
 
 interface IndexPageProps {}
 
@@ -106,25 +107,7 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 					</Row>
 				</Container>
 			</div>
-			<div className={indexStyles.darkContainer}>
-				<Container>
-					<h3 className={indexStyles.headerThree}>
-						Services that we offer our clients.
-					</h3>
-					<Row className="px-5">
-						<Col></Col>
-						<Col className={indexStyles.firstBox}></Col>
-						<Col className={indexStyles.secondBox}></Col>
-						<Col></Col>
-					</Row>
-					<Row className="px-5">
-						<Col></Col>
-						<Col className={indexStyles.secondBox}></Col>
-						<Col className={indexStyles.firstBox}></Col>
-						<Col></Col>
-					</Row>
-				</Container>
-			</div>
+			<ServicesOffered />
 			<div className={indexStyles.greyContainer}>
 				<Container>
 					<h3 className={indexStyles.headerFour}>

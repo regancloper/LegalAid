@@ -92,26 +92,6 @@ const BoardPage: React.FC<BoardPageProps> = () => {
 							<div className={boardStyles.employer}>{member.employer}</div>
 						</Col>
 					))}
-					<Col xs={12} sm={6} className={boardStyles.membersColumn}>
-						<div>Pooja Chawla</div>
-						<div className={boardStyles.employer}>Pooja Chawla, P.C.</div>
-					</Col>
-					<Col xs={12} sm={6} className={boardStyles.membersColumn}>
-						<div>Pooja Chawla</div>
-						<div className={boardStyles.employer}>Pooja Chawla, P.C.</div>
-					</Col>
-					<Col xs={12} sm={6} className={boardStyles.membersColumn}>
-						<div>Pooja Chawla</div>
-						<div className={boardStyles.employer}>Pooja Chawla, P.C.</div>
-					</Col>
-					<Col xs={12} sm={6} className={boardStyles.membersColumn}>
-						<div>Pooja Chawla</div>
-						<div className={boardStyles.employer}>Pooja Chawla, P.C.</div>
-					</Col>
-					<Col xs={12} sm={6} className={boardStyles.membersColumn}>
-						<div>Pooja Chawla</div>
-						<div className={boardStyles.employer}>Pooja Chawla, P.C.</div>
-					</Col>
 				</Row>
 			</Container>
 		</Layout>

@@ -13,11 +13,9 @@ interface MissionPageProps {}
 const MissionPage: React.FC<MissionPageProps> = () => {
 	const missionData = useStaticQuery(graphql`
 		query {
-			allContentfulOurMission {
-				nodes {
-					body {
-						json
-					}
+			contentfulAboutSection(title: { eq: "Mission" }) {
+				content {
+					json
 				}
 			}
 		}
@@ -44,7 +42,7 @@ const MissionPage: React.FC<MissionPageProps> = () => {
 				<PageHeader text="Our Mission" />
 				<div className={missionStyles.content}>
 					{documentToReactComponents(
-						missionData.allContentfulOurMission.nodes[0].body.json,
+						missionData.contentfulAboutSection.content.json,
 						options
 					)}
 				</div>

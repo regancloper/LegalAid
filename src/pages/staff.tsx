@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
@@ -71,18 +71,29 @@ const StaffPage: React.FC<StaffPageProps> = () => {
 				<h5 className={staffStyles.staffSubheader}>Administrative Team</h5>
 				<Row>
 					{data.administrative.nodes.map((node: any) => (
-						<Col xs={12} md={6} lg={4} key={node.id} className="my-2">
-							<Card border="0" className={staffStyles.card}>
-								<Img fluid={node.picture.fluid} />
-								<div className={staffStyles.pictureText}>
-									<div className={staffStyles.employeeName}>
-										{node.firstName} {node.lastName}
+						<Col
+							xs={12}
+							md={6}
+							lg={4}
+							key={node.id}
+							className="my-2 d-flex justify-content-center"
+						>
+							<Link
+								to={`/staff/${node.firstName}-${node.lastName}`}
+								className={staffStyles.link}
+							>
+								<Card border="0" className={staffStyles.card}>
+									<Img fluid={node.picture.fluid} />
+									<div className={staffStyles.pictureText}>
+										<div className={staffStyles.employeeName}>
+											{node.firstName} {node.lastName}
+										</div>
+										<div className={staffStyles.employeePosition}>
+											{node.position}
+										</div>
 									</div>
-									<div className={staffStyles.employeePosition}>
-										{node.position}
-									</div>
-								</div>
-							</Card>
+								</Card>
+							</Link>
 						</Col>
 					))}
 				</Row>
@@ -91,18 +102,29 @@ const StaffPage: React.FC<StaffPageProps> = () => {
 				</h5>
 				<Row>
 					{data.delinquency.nodes.map((node: any) => (
-						<Col xs={12} md={6} lg={4} key={node.id} className="my-2">
-							<Card border="0" className={staffStyles.card}>
-								<Img fluid={node.picture.fluid} />
-								<div className={staffStyles.pictureText}>
-									<div className={staffStyles.employeeName}>
-										{node.firstName} {node.lastName}
+						<Col
+							xs={12}
+							md={6}
+							lg={4}
+							key={node.id}
+							className="my-2 d-flex justify-content-center"
+						>
+							<Link
+								to={`/staff/${node.firstName}-${node.lastName}`}
+								className={staffStyles.link}
+							>
+								<Card border="0" className={staffStyles.card}>
+									<Img fluid={node.picture.fluid} />
+									<div className={staffStyles.pictureText}>
+										<div className={staffStyles.employeeName}>
+											{node.firstName} {node.lastName}
+										</div>
+										<div className={staffStyles.employeePosition}>
+											{node.position}
+										</div>
 									</div>
-									<div className={staffStyles.employeePosition}>
-										{node.position}
-									</div>
-								</div>
-							</Card>
+								</Card>
+							</Link>
 						</Col>
 					))}
 				</Row>
@@ -111,18 +133,29 @@ const StaffPage: React.FC<StaffPageProps> = () => {
 				</h5>
 				<Row>
 					{data.children.nodes.map((node: any) => (
-						<Col xs={12} md={6} lg={4} key={node.id} className="my-2">
-							<Card border="0" className={staffStyles.card}>
-								<Img fluid={node.picture.fluid} />
-								<div className={staffStyles.pictureText}>
-									<div className={staffStyles.employeeName}>
-										{node.firstName} {node.lastName}
+						<Col
+							xs={12}
+							md={6}
+							lg={4}
+							key={node.id}
+							className="my-2 d-flex justify-content-center"
+						>
+							<Link
+								to={`/staff/${node.firstName}-${node.lastName}`}
+								className={staffStyles.link}
+							>
+								<Card border="0" className={staffStyles.card}>
+									<Img fluid={node.picture.fluid} />
+									<div className={staffStyles.pictureText}>
+										<div className={staffStyles.employeeName}>
+											{node.firstName} {node.lastName}
+										</div>
+										<div className={staffStyles.employeePosition}>
+											{node.position}
+										</div>
 									</div>
-									<div className={staffStyles.employeePosition}>
-										{node.position}
-									</div>
-								</div>
-							</Card>
+								</Card>
+							</Link>
 						</Col>
 					))}
 				</Row>

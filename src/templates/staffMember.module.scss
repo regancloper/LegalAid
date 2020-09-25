@@ -1,0 +1,32 @@
+.body {
+	font-family: 'Fira Sans', sans-serif;
+}
+
+.name {
+	font-family: 'Abril Fatface', serif;
+	font-size: 2em;
+}
+
+.pill {
+	font-weight: 200;
+	color: #fff;
+	background-color: #002b4e;
+	font-size: 1.1em;
+	margin-bottom: 0.3em;
+}
+
+.email {
+	font-weight: 100;
+	background-color: transparent;
+}
+
+.picture {
+	max-height: 350px;
+	max-width: 350px;
+	border-radius: 15px;
+}
+
+.description {
+	margin-top: 1em;
+	font-weight: 300;
+}

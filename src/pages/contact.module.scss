@@ -1,0 +1,22 @@
+.addressCard {
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 300;
+	background-color: #fff;
+	padding: 2em;
+	box-shadow: 5px 5px 10px rgba(46, 61, 73, 0.2);
+	margin-bottom: 2em;
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.addressTitle {
+	font-family: 'Abril Fatface', serif;
+	line-height: 1.2;
+	font-size: 1.5em;
+}
+
+.cardContent {
+	font-size: 1.1em;
+}

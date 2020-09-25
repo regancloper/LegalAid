@@ -15,7 +15,7 @@ const Footer: React.FC<FooterProps> = () => {
 				<Row>
 					<Col sm={6} md={5} lg={4}>
 						<div className={footerStyles.topLevel}>HOW TO REACH US</div>
-						<p className={`${footerStyles.lowerLevel} mr-5`}>
+						<div className={`${footerStyles.lowerLevel} mr-5`}>
 							<div className="my-4">
 								<PhoneIcon className="mr-3" />
 								<span style={{ fontSize: '1.1em' }}>(205) 251-3516</span>
@@ -27,7 +27,7 @@ const Footer: React.FC<FooterProps> = () => {
 									Birmingham, AL 35203
 								</div>
 							</div>
-						</p>
+						</div>
 					</Col>
 					<Col sm={6} md={3}>
 						<div className={footerStyles.topLevel}>NAVIGATE</div>
@@ -51,7 +51,7 @@ const Footer: React.FC<FooterProps> = () => {
 					</Col>
 					<Col sm={6} md={4}>
 						<div className={footerStyles.topLevel}>RECENT NEWS</div>
-						<p className={footerStyles.lowerLevel}>
+						<div className={footerStyles.lowerLevel}>
 							<div className={footerStyles.newsItem}>
 								<div className={footerStyles.articleTitle}>
 									First Publication Title Goes Here: What It's About and Who Did
@@ -65,14 +65,14 @@ const Footer: React.FC<FooterProps> = () => {
 								</div>
 								<small className={footerStyles.readMore}>Read More</small>
 							</div>
-						</p>
+						</div>
 					</Col>
 				</Row>
 				<p className={footerStyles.copyright}>
 					&copy; Legal Aid Society of Birmingham
 				</p>
 				<p className={footerStyles.credit}>
-					Built in Birmingham by RCL Web Design.
+					Built in Birmingham by RL Web Design.
 				</p>
 			</Container>
 		</footer>

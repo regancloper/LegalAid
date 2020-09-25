@@ -13,11 +13,9 @@ interface StoryPageProps {}
 const StoryPage: React.FC<StoryPageProps> = () => {
 	const storyData = useStaticQuery(graphql`
 		query {
-			allContentfulOurHistory {
-				nodes {
-					body {
-						json
-					}
+			contentfulAboutSection(title: { eq: "History" }) {
+				content {
+					json
 				}
 			}
 		}
@@ -44,7 +42,7 @@ const StoryPage: React.FC<StoryPageProps> = () => {
 				<PageHeader text="Our Story" />
 				<div className={storyStyles.content}>
 					{documentToReactComponents(
-						storyData.allContentfulOurHistory.nodes[0].body.json,
+						storyData.contentfulAboutSection.content.json,
 						options
 					)}
 				</div>
