@@ -20,7 +20,7 @@ const Article: React.FC<ArticleProps> = ({ data }) => {
 					<div className="py-3 p-lg-5">
 						<Card border="0" style={{ borderRadius: '15px' }}>
 							<Img
-								fluid={data.contentfulLegalAidNews.picture.fluid}
+								fixed={data.contentfulLegalAidNews.picture.fixed}
 								style={{ borderRadius: '15px 15px 0px 0px' }}
 							/>
 							<Card.Body className="m-2 m-md-4">
@@ -46,8 +46,8 @@ export const query = graphql`
 			id
 			title
 			picture {
-				fluid(maxWidth: 800) {
-					...GatsbyContentfulFluid
+				fixed(width: 300) {
+					...GatsbyContentfulFixed
 				}
 			}
 			publishedDate(formatString: "MMMM DD, YYYY")

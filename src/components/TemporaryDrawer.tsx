@@ -9,8 +9,10 @@ import CloseIcon from '@material-ui/icons/Close';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import FacebookIcon from '@material-ui/icons/Facebook';
+import moment from 'moment';
 
 import MenuHeader from './MenuHeader';
+import { NewsDataObject } from '../utils/types';
 
 const useStyles = makeStyles((theme: Theme) =>
 	createStyles({
@@ -21,7 +23,6 @@ const useStyles = makeStyles((theme: Theme) =>
 			[theme.breakpoints.up('sm')]: {
 				width: 500,
 			},
-			minHeight: '100vh',
 			backgroundColor: '#076666',
 			color: '#fff',
 		},
@@ -104,10 +105,25 @@ const useStyles = makeStyles((theme: Theme) =>
 				textDecoration: 'none',
 			},
 		},
+		newsTitle: {
+			fontFamily: 'Abril Fatface, serif',
+			textTransform: 'none',
+			fontWeight: 400,
+			fontSize: '1.2rem',
+			letterSpacing: 0,
+		},
+		newsDate: {
+			fontWeight: 100,
+			fontSize: '0.8rem',
+		},
 	})
 );
 
-export default function TemporaryDrawer() {
+interface TemporaryDrawerProps {
+	newsArray: NewsDataObject[];
+}
+
+const TemporaryDrawer: React.FC<TemporaryDrawerProps> = ({ newsArray }) => {
 	const classes = useStyles();
 	const [open, setOpen] = React.useState(false);
 	const [aboutList, setAboutList] = React.useState(false);
@@ -261,6 +277,22 @@ export default function TemporaryDrawer() {
 						</a>
 					</div>
 					<MenuHeader text="Recent News" />
+					<ListGroup variant="flush" className={classes.listGroup}>
+						{newsArray.map(newsItem => (
+							<Link
+								to="/newsroom"
+								className={classes.link}
+								onClick={toggleDrawer(false)}
+							>
+								<ListGroup.Item className={classes.listGroupItem}>
+									<div className={classes.newsDate}>
+										{moment.utc(newsItem.publishedDate).format('LL')}
+									</div>
+									<div className={classes.newsTitle}>{newsItem.title}</div>
+								</ListGroup.Item>
+							</Link>
+						))}
+					</ListGroup>
 				</div>
 			</Container>
 		</div>
@@ -282,4 +314,6 @@ export default function TemporaryDrawer() {
 			</Drawer>
 		</div>
 	);
-}
+};
+
+export default TemporaryDrawer;

@@ -8,8 +8,11 @@ import { graphql, Link, useStaticQuery } from 'gatsby';
 // @ts-ignore
 import logo from '../images/logo.png';
 import { Container } from '@material-ui/core';
+import { NewsDataObject } from '../utils/types';
 
-interface ButtonAppBarProps {}
+interface ButtonAppBarProps {
+	newsArray: NewsDataObject[];
+}
 
 const useStyles = makeStyles({
 	root: {
@@ -31,7 +34,7 @@ const useStyles = makeStyles({
 	},
 });
 
-const ButtonAppBar: React.FC<ButtonAppBarProps> = () => {
+const ButtonAppBar: React.FC<ButtonAppBarProps> = ({ newsArray }) => {
 	const classes = useStyles();
 	// const data = useStaticQuery(graphql`
 	// 	query {
@@ -57,7 +60,7 @@ const ButtonAppBar: React.FC<ButtonAppBarProps> = () => {
 								style={{ width: '230px', height: '4.5rem' }}
 							/>
 						</Link>
-						<TemporaryDrawer />
+						<TemporaryDrawer newsArray={newsArray} />
 					</Toolbar>
 				</Container>
 			</AppBar>

@@ -22,3 +22,20 @@ export interface StripeNode {
 		name: string;
 	};
 }
+
+export interface NewsDataObject {
+	id: string;
+	__typename: string;
+	title: string;
+	publishedDate: string;
+	externalUrl?: string;
+}
+
+export interface NewsData {
+	legalNews: {
+		nodes: NewsDataObject[];
+	};
+	publications: {
+		nodes: NewsDataObject[];
+	};
+}

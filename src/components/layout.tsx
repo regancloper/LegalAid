@@ -6,6 +6,7 @@ import AppBar from './AppBar';
 import Footer from './footer';
 import '../styles/index.scss';
 import layoutStyles from './layout.module.scss';
+import { NewsData } from '../utils/types';
 
 interface LayoutProps {}
 
@@ -37,34 +38,18 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 		.concat(newsData.publications.nodes)
 		.sort((a, b) => {
 			return a.publishedDate < b.publishedDate ? 1 : -1;
-		});
+		})
+		.slice(0, 5);
 
 	return (
 		<div>
-			<AppBar />
+			<AppBar newsArray={newsArray} />
 			<div className={layoutStyles.content}>{children}</div>
 			<div className={layoutStyles.footer}>
-				<Footer />
+				<Footer newsArray={newsArray.slice(0, 2)} />
 			</div>
 		</div>
 	);
 };
 
 export default Layout;
-
-interface NewsDataObject {
-	id: string;
-	__typename: string;
-	title: string;
-	publishedDate: string;
-	externalUrl?: string;
-}
-
-interface NewsData {
-	legalNews: {
-		nodes: NewsDataObject[];
-	};
-	publications: {
-		nodes: NewsDataObject[];
-	};
-}

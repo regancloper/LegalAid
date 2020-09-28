@@ -5,10 +5,13 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import ExploreIcon from '@material-ui/icons/Explore';
 
 import footerStyles from './footer.module.scss';
+import { NewsDataObject } from '../utils/types';
 
-interface FooterProps {}
+interface FooterProps {
+	newsArray: NewsDataObject[];
+}
 
-const Footer: React.FC<FooterProps> = () => {
+const Footer: React.FC<FooterProps> = ({ newsArray }) => {
 	return (
 		<footer className={footerStyles.footer}>
 			<Container>
@@ -32,19 +35,19 @@ const Footer: React.FC<FooterProps> = () => {
 					<Col sm={6} md={3}>
 						<div className={footerStyles.topLevel}>NAVIGATE</div>
 						<ul className={footerStyles.list}>
-							<Link className={footerStyles.link} to="/about">
+							<Link className={footerStyles.link} to="/">
 								<li>Home</li>
 							</Link>
-							<Link className={footerStyles.link} to="/about">
+							<Link className={footerStyles.link} to="/donate">
 								<li>Donate</li>
 							</Link>
-							<Link className={footerStyles.link} to="/about">
+							<Link className={footerStyles.link} to="/services">
 								<li>Our Services</li>
 							</Link>
-							<Link className={footerStyles.link} to="/about">
+							<Link className={footerStyles.link} to="/our-story">
 								<li>About</li>
 							</Link>
-							<Link className={footerStyles.link} to="/about">
+							<Link className={footerStyles.link} to="/contact">
 								<li>Contact</li>
 							</Link>
 						</ul>
@@ -52,19 +55,16 @@ const Footer: React.FC<FooterProps> = () => {
 					<Col sm={6} md={4}>
 						<div className={footerStyles.topLevel}>RECENT NEWS</div>
 						<div className={footerStyles.lowerLevel}>
-							<div className={footerStyles.newsItem}>
-								<div className={footerStyles.articleTitle}>
-									First Publication Title Goes Here: What It's About and Who Did
-									What That Was Relevant
-								</div>
-								<small className={footerStyles.readMore}>Read More</small>
-							</div>
-							<div className={footerStyles.newsItem}>
-								<div className={footerStyles.articleTitle}>
-									Employee of the Month: Jequette Edmondson
-								</div>
-								<small className={footerStyles.readMore}>Read More</small>
-							</div>
+							{newsArray.map(newsItem => (
+								<Link to="/newsroom" className={footerStyles.link}>
+									<div className={footerStyles.newsItem}>
+										<div className={footerStyles.articleTitle}>
+											{newsItem.title}
+										</div>
+										<small className={footerStyles.readMore}>Read More</small>
+									</div>
+								</Link>
+							))}
 						</div>
 					</Col>
 				</Row>
