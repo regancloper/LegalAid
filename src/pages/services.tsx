@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import Img from 'gatsby-image';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -20,10 +20,24 @@ const ServicesPage: React.FC<ServicesPageProps> = () => {
 					}
 				}
 			}
-			bbvlp: file(relativePath: { eq: "bbvlp.jpg" }) {
+			bbvlp: file(relativePath: { eq: "vlbLogo.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 1200) {
-						...GatsbyImageSharpFluid
+					fixed(width: 300) {
+						...GatsbyImageSharpFixed
+					}
+				}
+			}
+			lsa: file(relativePath: { eq: "LSALogo.png" }) {
+				childImageSharp {
+					fixed(width: 300) {
+						...GatsbyImageSharpFixed
+					}
+				}
+			}
+			asb: file(relativePath: { eq: "asb.jpg" }) {
+				childImageSharp {
+					fixed(width: 150) {
+						...GatsbyImageSharpFixed
 					}
 				}
 			}
@@ -100,13 +114,149 @@ const ServicesPage: React.FC<ServicesPageProps> = () => {
 				<h4 className={servicesStyles.header}>
 					What Other Organizations Offer Legal Help?
 				</h4>
-				<Row>
-					<Col>
-						<Img fluid={imageData.bbvlp.childImageSharp.fluid}></Img>
+				<Row className="mb-5">
+					<Col xs={12} md={6} xl={4}>
+						<a href="https://vlbham.org/" className={servicesStyles.link}>
+							<Card className={servicesStyles.card}>
+								<Img
+									fixed={imageData.bbvlp.childImageSharp.fixed}
+									style={{ margin: '1.2em auto -0.5em auto' }}
+								></Img>
+								<Card.Body>
+									Volunteer Lawyers Birmingham serves low-income clients by
+									utilizing legal Help Desks in Birmingham, and manages a pro
+									bono representation program for clients whose issues cannot be
+									solved in a one-time Help Desk engagement. Their legal
+									services focus on four tenets: Safe Families, Safe Housing,
+									Safe Finances, and Serving Veterans.
+								</Card.Body>
+							</Card>
+						</a>
 					</Col>
-					<Col></Col>
-					<Col></Col>
-					<Col></Col>
+					<Col xs={12} md={6} xl={4}>
+						<a
+							href="https://legalservicesalabama.org/"
+							className={servicesStyles.link}
+						>
+							<Card className={servicesStyles.card}>
+								<Img
+									fixed={imageData.lsa.childImageSharp.fixed}
+									style={{ margin: '2.5em auto 0.7em auto' }}
+								></Img>
+								<Card.Body>
+									Legal Services Alabama is a non-profit law firm providing free
+									civil legal assistance to low-income Alabamians who cannot pay
+									for a lawyer. They only handle civil cases, and only for
+									people whose income is not more than 125% of the federal
+									poverty level. They have offices in Anniston, Birmingham,
+									Dothan, Huntsville, Mobile, Montgomery, Selma, and Tuscaloosa.
+								</Card.Body>
+							</Card>
+						</a>
+					</Col>
+					<Col xs={12} md={6} xl={4}>
+						<a
+							href="https://www.alabar.org/for-the-public/get-legal-help/"
+							className={servicesStyles.link}
+						>
+							<Card className={servicesStyles.card}>
+								<Img
+									fixed={imageData.asb.childImageSharp.fixed}
+									style={{ margin: '0.5em auto -0.5em auto' }}
+								></Img>
+								<Card.Body>
+									The Alabama State Bar Association offers a Lawyer Referral
+									Service, which is a program designed to assist the public in
+									locating an attorney who can be retained to assist with their
+									general legal needs. Attorneys who participate in the Referrel
+									Service agree to charge not more than $50 for an initial 30
+									minute consultation. Following the initial consultation, the
+									potential client and referred attorney will negotiate a fee
+									for the services required.
+								</Card.Body>
+							</Card>
+						</a>
+					</Col>
+				</Row>
+			</Container>
+			<Container>
+				<h4 className={servicesStyles.header}>
+					How Does Legal Aid Society Benefit the Community?
+				</h4>
+				<Row className="mb-5">
+					<Col xs={12} md={6}>
+						<Card className={servicesStyles.benefitCard}>
+							<Card.Body>
+								<Card.Title className={servicesStyles.cardTitle}>
+									We Benefit People in Need
+								</Card.Title>
+								<Card.Text>
+									Children removed from abusive homes, caught in the middle of a
+									custody battle, or accused of crimes, and adults facing
+									potential jail sentences, frequently have no means to secure
+									legal representation. By providing these individuals with
+									attorneys to guide and advise them through the legal system,
+									the legal rights of these persons are protected.
+								</Card.Text>
+							</Card.Body>
+						</Card>
+					</Col>
+					<Col xs={12} md={6}>
+						<Card className={servicesStyles.benefitCard}>
+							<Card.Body>
+								<Card.Title className={servicesStyles.cardTitle}>
+									We Benefit the Court System
+								</Card.Title>
+								<Card.Text>
+									By providing an attorney who is physically present in the
+									courtroom and who has expertise in the legal issues that
+									regularly arise in that particular court, judges may utilize
+									Legal Aid as an alternative to identifying, training, and
+									appointing private counsel for those persons legally entitled
+									to free representation.
+								</Card.Text>
+							</Card.Body>
+						</Card>
+					</Col>
+					<Col xs={12} md={6}>
+						<Card className={servicesStyles.benefitCard}>
+							<Card.Body>
+								<Card.Title className={servicesStyles.cardTitle}>
+									We Benefit the Legal Community
+								</Card.Title>
+								<Card.Text>
+									Although many lawyers in private practice regularly accept
+									appointment to some indigent cases as their professional
+									obligation, in some courts there are not a sufficient number
+									of these attorneys to provide legal representation for the
+									large numbers of indigent persons requiring appointed counsel.
+									The availability of Legal Aid lawyers to handle these cases
+									insures that all citizens who are eligible for free
+									representation have access to a lawyer.
+								</Card.Text>
+							</Card.Body>
+						</Card>
+					</Col>
+					<Col xs={12} md={6}>
+						<Card className={servicesStyles.benefitCard}>
+							<Card.Body>
+								<Card.Title className={servicesStyles.cardTitle}>
+									We Benefit Taxpayers
+								</Card.Title>
+								<Card.Text>
+									Legal Aid can provide legal services at a rate substantially
+									below the hourly rates of members of the private bar for
+									several key reasons: the accessibility of its lawyers, who are
+									always present during the day-to-day operations of the court,
+									the familiarity of those lawyers with the issues, procedure,
+									and personnel of those courts, the capability of its lawyers
+									to handle individual cases without regard to hourly billing
+									and business profits, and the commitment of these lawyers to
+									quality legal representation for the poor.
+								</Card.Text>
+							</Card.Body>
+						</Card>
+					</Col>
 				</Row>
 			</Container>
 		</Layout>

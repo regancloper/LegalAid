@@ -195,7 +195,11 @@ export default function TemporaryDrawer() {
 										Our Story
 									</ListGroup.Item>
 								</Link>
-								<Link to="/mission" className={classes.link}>
+								<Link
+									to="/mission"
+									className={classes.link}
+									onClick={toggleDrawer(false)}
+								>
 									<ListGroup.Item
 										className={classes.listGroupItem}
 										style={{ paddingLeft: '2em' }}
@@ -203,7 +207,11 @@ export default function TemporaryDrawer() {
 										Mission
 									</ListGroup.Item>
 								</Link>
-								<Link to="/staff" className={classes.link}>
+								<Link
+									to="/staff"
+									className={classes.link}
+									onClick={toggleDrawer(false)}
+								>
 									<ListGroup.Item
 										className={classes.listGroupItem}
 										style={{ paddingLeft: '2em' }}
@@ -211,7 +219,11 @@ export default function TemporaryDrawer() {
 										Staff
 									</ListGroup.Item>
 								</Link>
-								<Link to="/board" className={classes.link}>
+								<Link
+									to="/board"
+									className={classes.link}
+									onClick={toggleDrawer(false)}
+								>
 									<ListGroup.Item
 										className={classes.listGroupItem}
 										style={{ paddingLeft: '2em' }}
@@ -221,7 +233,11 @@ export default function TemporaryDrawer() {
 								</Link>
 							</div>
 						)}
-						<Link to="/" className={classes.link} onClick={toggleDrawer(false)}>
+						<Link
+							to="/newsroom"
+							className={classes.link}
+							onClick={toggleDrawer(false)}
+						>
 							<ListGroup.Item className={classes.listGroupItem}>
 								Newsroom
 							</ListGroup.Item>

@@ -2,7 +2,7 @@
 	font-family: 'Fira Sans', sans-serif;
 	font-weight: 200;
 	text-align: justify;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	margin-bottom: 3em;
 }
 
@@ -16,4 +16,48 @@
 .image {
 	height: 70vh;
 	margin-bottom: 4em;
+}
+
+.card {
+	box-shadow: 5px 5px 10px rgba(46, 61, 73, 0.2);
+	border-radius: 0;
+	border: none;
+	min-height: 455px;
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 200;
+	text-align: justify;
+	margin-bottom: 1.5em;
+}
+
+.card:hover {
+	cursor: pointer;
+	box-shadow: 10px 10px 20px rgba(46, 61, 73, 0.3);
+	// box-shadow: 10px 10px 20px #9ab6b6;
+}
+
+.benefitCard {
+	box-shadow: 5px 5px 10px rgba(46, 61, 73, 0.2);
+	border-radius: 0;
+	border: none;
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 200;
+	text-align: justify;
+	margin-bottom: 1.5em;
+	min-height: 275px;
+}
+
+.cardTitle {
+	font-family: 'Abril Fatface', serif;
+	font-size: 1.8em;
+	text-align: center;
+}
+
+.link {
+	color: inherit;
+	text-decoration: none;
+}
+
+.link:hover {
+	color: inherit;
+	text-decoration: none;
 }

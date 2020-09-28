@@ -50,19 +50,13 @@ const ButtonAppBar: React.FC<ButtonAppBarProps> = () => {
 			<AppBar position="fixed" className={classes.header}>
 				<Container>
 					<Toolbar className="justify-content-between">
-						{/* <div style={{ width: '20vw' }}> */}
 						<Link to="/">
-							{/* <span>{data.logoImage.absolutePath}</span> */}
-							{/* <Img fluid={data.logoImage.childImageSharp.fluid} /> */}
 							<img
 								src={logo}
 								alt="Our logo"
 								style={{ width: '230px', height: '4.5rem' }}
 							/>
 						</Link>
-						{/* <Link to="/donate">Donate</Link> */}
-						{/* <Link to="/people">People</Link> */}
-						{/* </div> */}
 						<TemporaryDrawer />
 					</Toolbar>
 				</Container>

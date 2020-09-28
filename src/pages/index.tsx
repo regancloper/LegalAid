@@ -84,9 +84,10 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 					<Row>
 						<Col md={8} lg={6}>
 							<p className={indexStyles.mainParas}>
-								We are a network of attorneys and staff that offer legal aid for
-								children and low-income individuals who need representation in
-								family-law, juvenile delinquency, and drug court cases.
+								We are a network of attorneys and staff that provide
+								court-appointed legal aid for children and low-income
+								individuals who need representation in family-law, juvenile
+								delinquency, and drug court cases.
 							</p>
 						</Col>
 					</Row>
@@ -108,14 +109,6 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 				</Container>
 			</div>
 			<ServicesOffered />
-			<div className={indexStyles.greyContainer}>
-				<Container>
-					<h3 className={indexStyles.headerFour}>
-						...and services we don't offer:
-					</h3>
-					<hr className={indexStyles.hr} />
-				</Container>
-			</div>
 		</Layout>
 	);
 };

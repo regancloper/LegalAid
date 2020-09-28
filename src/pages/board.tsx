@@ -85,7 +85,12 @@ const BoardPage: React.FC<BoardPageProps> = () => {
 					style={{ marginLeft: '15%', marginRight: '15%' }}
 				>
 					{data.members.nodes.map((member: any) => (
-						<Col xs={12} sm={6} className={boardStyles.membersColumn}>
+						<Col
+							xs={12}
+							sm={6}
+							className={boardStyles.membersColumn}
+							key={`${member.firstName}-${member.lastName}`}
+						>
 							<div>
 								{member.firstName} {member.lastName}
 							</div>

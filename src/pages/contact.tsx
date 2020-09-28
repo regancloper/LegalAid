@@ -39,7 +39,8 @@ const ContactPage: React.FC<ContactPageProps> = ({}) => {
 					<Col xs={12} md={6} lg={4}>
 						<div className={contactStyles.addressCard}>
 							<div className={contactStyles.addressTitle}>
-								Family Court (Birmingham)
+								Family Court <br />
+								(Birmingham)
 							</div>
 							<div className={contactStyles.cardContent}>
 								<div>120 North Second Court</div>
@@ -58,7 +59,8 @@ const ContactPage: React.FC<ContactPageProps> = ({}) => {
 					<Col xs={12} md={6} lg={4}>
 						<div className={contactStyles.addressCard}>
 							<div className={contactStyles.addressTitle}>
-								Family Court (Bessemer)
+								Family Court <br />
+								(Bessemer)
 							</div>
 							<div className={contactStyles.cardContent}>
 								<div>1801 North 3rd Avenue</div>

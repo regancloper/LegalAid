@@ -1,0 +1,79 @@
+.description {
+	width: 70%;
+	margin: 0 auto;
+	text-align: center;
+	font-family: 'Fira Sans', sans-serif;
+	font-weight: 200;
+	margin-bottom: 3em;
+}
+
+.header {
+	font-weight: 200;
+	font-size: 2em;
+	// color: #6b8bbb;
+	color: #9ab1d4;
+	text-align: center;
+	font-family: 'Taviraj';
+}
+
+.card {
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+	// margin-bottom: 2em;
+	min-height: 180px;
+	z-index: 1;
+	text-align: center;
+	max-width: 800px;
+	margin: 0 auto 2em auto;
+}
+
+.title {
+	font-family: 'Abril Fatface', serif;
+	font-size: 1.3em;
+	margin: 0 1.2em 0.6em 1.2em;
+}
+
+.picture {
+	position: relative;
+	bottom: -15px;
+	width: 80%;
+	max-width: 400px;
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.6);
+}
+
+.newsImage {
+	height: 350px;
+	background-position: center;
+}
+
+.lineClamp {
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.link {
+	color: black;
+	font-weight: 200;
+}
+
+.link:hover {
+	text-decoration: none;
+	color: #076666;
+}
+
+.copenhagen {
+	font-size: 4.2em;
+	font-family: 'Copenhagen';
+	margin-top: 0.5em;
+	line-height: 0.1;
+	color: rgba(0, 0, 0, 0.2);
+}
+
+.pill {
+	font-weight: 200;
+	color: #fff;
+	background-color: #002b4e;
+	font-size: 1.1em;
+	// margin-bottom: 1.5em;
+}

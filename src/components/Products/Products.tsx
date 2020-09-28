@@ -80,16 +80,20 @@ const Products: React.FC<ProductsProps> = () => {
 					<div>
 						{/* Buttons that control donation type */}
 						<div className={productsStyles.donationSelector}>
-							<DonationButton
-								text="Monthly"
-								active={!oneTimeDonation}
-								setOneTimeDonation={setOneTimeDonation}
-							/>
-							<DonationButton
-								text="Once"
-								active={oneTimeDonation}
-								setOneTimeDonation={setOneTimeDonation}
-							/>
+							<div className="d-block d-md-inline">
+								<DonationButton
+									text="Monthly"
+									active={!oneTimeDonation}
+									setOneTimeDonation={setOneTimeDonation}
+								/>
+							</div>
+							<div className="d-block d-md-inline">
+								<DonationButton
+									text="Once"
+									active={oneTimeDonation}
+									setOneTimeDonation={setOneTimeDonation}
+								/>
+							</div>
 						</div>
 						{!oneTimeDonation ? (
 							<div className={productsStyles.container}>
