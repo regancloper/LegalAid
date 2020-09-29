@@ -13,7 +13,7 @@ const DonateButton: React.FC<DonateButtonProps> = ({ text, loading }) => {
 	return (
 		<button
 			className={donationButtonStyles.button}
-			style={{ bottom: 42, minWidth: '50%' }}
+			style={{ bottom: 42, minWidth: '60%' }}
 		>
 			<span
 				className={cx(

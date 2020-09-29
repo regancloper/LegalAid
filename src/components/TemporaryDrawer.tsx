@@ -82,6 +82,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			cursor: 'pointer',
 			display: 'flex',
 			justifyContent: 'space-between',
+			transition: 'opacity 0.6s ease 0s',
 			'&:hover': {
 				color: 'white',
 				opacity: 0.6,
@@ -160,7 +161,7 @@ const TemporaryDrawer: React.FC<TemporaryDrawerProps> = ({ newsArray }) => {
 			</div>
 			<Container>
 				<div>
-					<MenuHeader text="Site Contents" />
+					<MenuHeader text="Menu" />
 					<ListGroup variant="flush" className={classes.listGroup}>
 						<Link to="/" className={classes.link} onClick={toggleDrawer(false)}>
 							<ListGroup.Item className={classes.listGroupItem}>

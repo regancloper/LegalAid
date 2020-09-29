@@ -27,7 +27,6 @@ const StaffMember: React.FC<StaffMemberProps> = ({ data }) => {
 	return (
 		<Layout>
 			<Container className={staffMemberStyles.body}>
-				{/* <div className="my-3 p-lg-5 bg-white rounded d-flex justify-content-between"> */}
 				<Row className="mt-5">
 					<Col xs={12} lg={5} className="mb-3">
 						<Img
@@ -53,7 +52,6 @@ const StaffMember: React.FC<StaffMemberProps> = ({ data }) => {
 							{data.contentfulStaffMember.description.description}
 						</p>
 					</Col>
-					{/* </div> */}
 				</Row>
 			</Container>
 		</Layout>
