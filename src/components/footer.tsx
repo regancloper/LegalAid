@@ -56,7 +56,11 @@ const Footer: React.FC<FooterProps> = ({ newsArray }) => {
 						<div className={footerStyles.topLevel}>RECENT NEWS</div>
 						<div className={footerStyles.lowerLevel}>
 							{newsArray.map(newsItem => (
-								<Link to="/newsroom" className={footerStyles.link}>
+								<Link
+									to="/newsroom"
+									className={footerStyles.link}
+									key={newsItem.id}
+								>
 									<div className={footerStyles.newsItem}>
 										<div className={footerStyles.articleTitle}>
 											{newsItem.title}

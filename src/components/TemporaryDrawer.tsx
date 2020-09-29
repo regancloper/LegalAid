@@ -283,6 +283,7 @@ const TemporaryDrawer: React.FC<TemporaryDrawerProps> = ({ newsArray }) => {
 								to="/newsroom"
 								className={classes.link}
 								onClick={toggleDrawer(false)}
+								key={newsItem.id}
 							>
 								<ListGroup.Item className={classes.listGroupItem}>
 									<div className={classes.newsDate}>

@@ -20,6 +20,7 @@ export interface StripeNode {
 	product: {
 		id: number;
 		name: string;
+		statement_descriptor: string;
 	};
 }
 

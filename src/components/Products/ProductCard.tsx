@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
 import getStripe from '../../utils/stripejs';
 import { StripeNode } from '../../utils/types';
-import cx from 'classnames';
+import { DollarCircleFilled } from '@ant-design/icons';
 
 import productCardStyles from './productcard.module.scss';
+// import { CircularProgress } from '@material-ui/core';
+import DonateButton from '../DonateButton';
 
 interface ProductCardProps {
 	option: StripeNode;
 	recurring: boolean;
 	flexible: boolean;
+	planName: string;
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
 	option,
 	recurring,
 	flexible,
+	planName,
 }) => {
 	const [loading, setLoading] = useState(false);
 
@@ -40,46 +44,37 @@ const ProductCard: React.FC<ProductCardProps> = ({
 	return (
 		<form onSubmit={handleSubmit}>
 			<div className={productCardStyles.cardStyles}>
-				<h4 style={{ padding: '1rem' }}>{option.product.name}</h4>
-				{flexible && (
-					<p>
+				<div className={productCardStyles.cardHeader}>{planName}</div>
+				{/* <DollarCircleFilled style={{ fontSize: '8em', color: '#00c57b' }} /> */}
+				{flexible ? (
+					<p
+						style={{ fontSize: '2em', margin: '1rem auto' }}
+						className="d-flex justify-content-center"
+					>
 						$
 						<input
 							required
 							className={productCardStyles.input}
-							placeholder="100"
+							// placeholder="1"
 							type="number"
 							min="1"
 							name="amtSelect"
 						/>
 					</p>
+				) : (
+					<h4 style={{ padding: '1rem', fontSize: '2em' }}>
+						{option.product.name}
+					</h4>
 				)}
-				<button
-					disabled={loading}
-					className={
-						loading
-							? cx(
-									productCardStyles.buttonStyles,
-									productCardStyles.buttonDisabledStyles
-							  )
-							: productCardStyles.buttonStyles
-					}
-				>
-					Donate!
-				</button>
+			</div>
+			<div className="d-flex justify-content-center">
+				<DonateButton
+					text={recurring ? 'Subscribe' : 'Give'}
+					loading={loading}
+				/>
 			</div>
 		</form>
 	);
-};
-
-const formatPrice = (amount: number, currency: string) => {
-	let price = Number((amount / 100).toFixed(2));
-	let numberFormat = new Intl.NumberFormat(['en-US'], {
-		style: 'currency',
-		currency: currency,
-		currencyDisplay: 'symbol',
-	});
-	return numberFormat.format(price);
 };
 
 export default ProductCard;

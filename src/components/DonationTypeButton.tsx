@@ -3,13 +3,13 @@ import cx from 'classnames';
 
 import donationButtonStyles from './donationButton.module.scss';
 
-interface DonationButtonProps {
+interface DonationTypeButtonProps {
 	text: string;
 	active: boolean;
 	setOneTimeDonation: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const DonationButton: React.FC<DonationButtonProps> = ({
+const DonationTypeButton: React.FC<DonationTypeButtonProps> = ({
 	text,
 	active,
 	setOneTimeDonation,
@@ -17,6 +17,7 @@ const DonationButton: React.FC<DonationButtonProps> = ({
 	return (
 		<button
 			className={donationButtonStyles.button}
+			style={{ marginRight: '30px' }}
 			onClick={() => setOneTimeDonation(text === 'Monthly' ? false : true)}
 		>
 			<span
@@ -32,4 +33,4 @@ const DonationButton: React.FC<DonationButtonProps> = ({
 	);
 };
 
-export default DonationButton;
+export default DonationTypeButton;

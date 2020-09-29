@@ -4,12 +4,15 @@ import { graphql, StaticQuery } from 'gatsby';
 import ProductCard from './ProductCard';
 import productsStyles from './products.module.scss';
 import { StripeProducts } from '../../utils/types';
-import DonationButton from '../DonationButton';
+import DonationButton from '../DonationTypeButton';
+import { Col, Container, Row } from 'react-bootstrap';
 
 interface ProductsProps {}
 
 const Products: React.FC<ProductsProps> = () => {
 	const [oneTimeDonation, setOneTimeDonation] = useState(false);
+
+	let oneTimePlan = '';
 
 	return (
 		<StaticQuery
@@ -65,6 +68,7 @@ const Products: React.FC<ProductsProps> = () => {
 								product {
 									id
 									name
+									statement_descriptor
 								}
 							}
 						}
@@ -77,7 +81,7 @@ const Products: React.FC<ProductsProps> = () => {
 				oneTimeFlexible,
 			}: StripeProducts) => {
 				return (
-					<div>
+					<Container>
 						{/* Buttons that control donation type */}
 						<div className={productsStyles.donationSelector}>
 							<div className="d-block d-md-inline">
@@ -95,35 +99,44 @@ const Products: React.FC<ProductsProps> = () => {
 								/>
 							</div>
 						</div>
+
 						{!oneTimeDonation ? (
-							<div className={productsStyles.container}>
+							// <div className={productsStyles.container}>
+							<Row>
 								{monthlyAmounts.edges.map(({ node: option }) => (
-									<ProductCard
-										key={option.id}
-										option={option}
-										recurring={true}
-										flexible={false}
-									/>
+									<Col xs={12} md={6} lg={4} key={option.id}>
+										<ProductCard
+											option={option}
+											recurring={true}
+											flexible={false}
+											planName={option.product.statement_descriptor}
+										/>
+									</Col>
 								))}
-							</div>
+							</Row>
 						) : (
-							<div className={productsStyles.container}>
-								{oneTimeAmounts.edges.map(({ node: option }) => (
+							<Row>
+								<Col xs={12} sm={6} lg={4} xl={3}>
 									<ProductCard
-										key={option.id}
-										option={option}
+										option={oneTimeFlexible}
 										recurring={false}
-										flexible={false}
+										flexible={true}
+										planName="You Choose"
 									/>
+								</Col>
+								{oneTimeAmounts.edges.map(({ node: option }) => (
+									<Col xs={12} sm={6} lg={4} xl={3} key={option.id}>
+										<ProductCard
+											option={option}
+											recurring={false}
+											flexible={false}
+											planName={(oneTimePlan += '$')}
+										/>
+									</Col>
 								))}
-								<ProductCard
-									option={oneTimeFlexible}
-									recurring={false}
-									flexible={true}
-								/>
-							</div>
+							</Row>
 						)}
-					</div>
+					</Container>
 				);
 			}}
 		/>
