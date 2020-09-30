@@ -22,6 +22,13 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 					}
 				}
 			}
+			secondImage: file(relativePath: { eq: "familyoncouch.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 2400) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
 		}
 	`);
 
@@ -109,6 +116,37 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 				</Container>
 			</div>
 			<ServicesOffered />
+			<div>
+				<BackgroundImage
+					className={indexStyles.secondHero}
+					fluid={imageData.secondImage.childImageSharp.fluid}
+				>
+					<Container>
+						<Row>
+							<Col className="d-none d-lg-block"></Col>
+							<Col className="d-none d-lg-block"></Col>
+							<Col className={indexStyles.aboutUsBox}>
+								<div
+									className={indexStyles.headerThree}
+									style={{ color: '#fff' }}
+								>
+									Who We Are
+								</div>
+								<div className="mt-3">
+									<Link to="/staff" style={{ marginBottom: '2em' }}>
+										<RoundedButton text="Meet Our Staff" />
+									</Link>
+								</div>
+								<div className="my-3">
+									<Link to="/board">
+										<RoundedButton text="Meet Our Board" />
+									</Link>
+								</div>
+							</Col>
+						</Row>
+					</Container>
+				</BackgroundImage>
+			</div>
 		</Layout>
 	);
 };

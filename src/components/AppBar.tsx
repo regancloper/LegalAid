@@ -29,7 +29,7 @@ const useStyles = makeStyles({
 		color: '#303030',
 		boxShadow: '0px 0px',
 		height: '6rem',
-		// borderBottom: '1px solid #b6c3cc',
+		borderBottom: '1px solid #e5e5e5',
 		justifyContent: 'center',
 	},
 });

@@ -1,7 +1,8 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import { Container, Card } from 'react-bootstrap';
 import Img from 'gatsby-image';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 import Layout from '../components/layout';
 import articleStyles from './article.module.scss';
@@ -28,21 +29,39 @@ const Article: React.FC<ArticleProps> = ({ data }) => {
 
 	return (
 		<Layout>
+			<Container>
+				<div
+					className="px-lg-5 my-4"
+					style={{
+						fontFamily: 'Fira Sans, san-serif',
+						fontSize: '1.1em',
+						fontWeight: 200,
+					}}
+				>
+					<Link to="/newsroom" className={articleStyles.link}>
+						<span>
+							<ArrowBackIcon />
+							<span className="ml-2">Back to Newsroom</span>
+						</span>
+					</Link>
+				</div>
+			</Container>
+
 			<div className={articleStyles.container}>
 				<Container>
-					<div className="py-3 p-lg-5">
+					<div className="px-lg-5">
 						<Card border="0" style={{ borderRadius: '15px' }}>
 							<div className="mx-3 mx-md-5">
 								<h3 className={articleStyles.heading}>
 									{data.contentfulLegalAidNews.title}
 								</h3>
+								<div className={articleStyles.date}>
+									{data.contentfulLegalAidNews.publishedDate}
+								</div>
 								<Img
 									fixed={data.contentfulLegalAidNews.picture.fixed}
 									style={{ borderRadius: '15px' }}
 								/>
-								<div className={articleStyles.date}>
-									{data.contentfulLegalAidNews.publishedDate}
-								</div>
 								<div className={articleStyles.content}>
 									{documentToReactComponents(
 										data.contentfulLegalAidNews.content.json,

@@ -60,6 +60,22 @@ const StaffPage: React.FC<StaffPageProps> = () => {
 					}
 				}
 			}
+			support: allContentfulStaffMember(
+				filter: { team: { eq: "Support" } }
+				sort: { fields: lastName }
+			) {
+				nodes {
+					id
+					lastName
+					firstName
+					position
+					picture {
+						fluid(maxWidth: 1000, maxHeight: 1000) {
+							...GatsbyContentfulFluid
+						}
+					}
+				}
+			}
 		}
 	`);
 
@@ -133,6 +149,35 @@ const StaffPage: React.FC<StaffPageProps> = () => {
 				</h5>
 				<Row>
 					{data.children.nodes.map((node: any) => (
+						<Col
+							xs={12}
+							md={6}
+							lg={4}
+							key={node.id}
+							className="my-2 d-flex justify-content-center"
+						>
+							<Link
+								to={`/staff/${node.firstName}-${node.lastName}`}
+								className={staffStyles.link}
+							>
+								<Card border="0" className={staffStyles.card}>
+									<Img fluid={node.picture.fluid} />
+									<div className={staffStyles.pictureText}>
+										<div className={staffStyles.employeeName}>
+											{node.firstName} {node.lastName}
+										</div>
+										<div className={staffStyles.employeePosition}>
+											{node.position}
+										</div>
+									</div>
+								</Card>
+							</Link>
+						</Col>
+					))}
+				</Row>
+				<h5 className={staffStyles.staffSubheader}>Support Team</h5>
+				<Row>
+					{data.support.nodes.map((node: any) => (
 						<Col
 							xs={12}
 							md={6}

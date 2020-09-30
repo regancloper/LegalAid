@@ -1,6 +1,6 @@
 .container {
 	background-color: #f1f3f2;
-	margin: 0 auto;
+	margin: 0 auto 3em auto;
 }
 
 .heading {
@@ -13,6 +13,8 @@
 
 .date {
 	font-family: 'Fira Sans', sans-serif;
+	text-transform: uppercase;
+	font-size: 1.2em;
 	font-weight: 200;
 	color: #076666;
 	margin-top: 1em;
@@ -22,4 +24,14 @@
 .content {
 	font-family: 'Fira Sans', sans-serif;
 	font-weight: 200;
+}
+
+.link {
+	text-decoration: none;
+	color: inherit;
+}
+
+.link:hover {
+	text-decoration: none;
+	color: inherit;
 }
