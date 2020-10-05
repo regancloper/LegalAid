@@ -10,6 +10,7 @@ export interface StripeProducts {
 		}[];
 	};
 	oneTimeFlexible: StripeNode;
+	monthlyFlexible: StripeNode;
 }
 
 export interface StripeNode {

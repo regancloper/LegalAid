@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import getStripe from '../../utils/stripejs';
 import { StripeNode } from '../../utils/types';
-import { DollarCircleFilled } from '@ant-design/icons';
 
 import productCardStyles from './productcard.module.scss';
-// import { CircularProgress } from '@material-ui/core';
 import DonateButton from '../DonateButton';
 
 interface ProductCardProps {
@@ -32,7 +30,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 		const { error } = await stripe.redirectToCheckout({
 			mode: recurring ? 'subscription' : 'payment',
 			lineItems: [{ price: option.id, quantity: amount }],
-			successUrl: `${window.location.origin}/donate/`,
+			successUrl: `${window.location.origin}/thankyou/`,
 			cancelUrl: `${window.location.origin}/`,
 		});
 		if (error) {
@@ -45,24 +43,28 @@ const ProductCard: React.FC<ProductCardProps> = ({
 		<form onSubmit={handleSubmit}>
 			<div className={productCardStyles.cardStyles}>
 				<div className={productCardStyles.cardHeader}>{planName}</div>
-				{/* <DollarCircleFilled style={{ fontSize: '8em', color: '#00c57b' }} /> */}
 				{flexible ? (
 					<p
-						style={{ fontSize: '2em', margin: '1rem auto' }}
+						style={{ fontSize: '2em', margin: '0.85rem auto' }}
 						className="d-flex justify-content-center"
 					>
 						$
 						<input
 							required
-							className={productCardStyles.input}
+							className={
+								recurring
+									? productCardStyles.inputMonthly
+									: productCardStyles.input
+							}
 							// placeholder="1"
 							type="number"
 							min="1"
 							name="amtSelect"
 						/>
+						{recurring && '/ month'}
 					</p>
 				) : (
-					<h4 style={{ padding: '1rem', fontSize: '2em' }}>
+					<h4 style={{ padding: '1rem 0', fontSize: '2em' }}>
 						{option.product.name}
 					</h4>
 				)}

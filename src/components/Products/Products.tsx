@@ -56,6 +56,7 @@ const Products: React.FC<ProductsProps> = () => {
 						filter: {
 							recurring: { interval: { eq: "month" } }
 							product: { active: { eq: true } }
+							id: { ne: "price_1HYzCkK9wC3K8MftNhNbxIEf" }
 						}
 						sort: { fields: [unit_amount] }
 					) {
@@ -73,12 +74,25 @@ const Products: React.FC<ProductsProps> = () => {
 							}
 						}
 					}
+					monthlyFlexible: stripePrice(
+						id: { eq: "price_1HYzCkK9wC3K8MftNhNbxIEf" }
+					) {
+						id
+						active
+						currency
+						unit_amount
+						product {
+							id
+							name
+						}
+					}
 				}
 			`}
 			render={({
 				oneTimeAmounts,
 				monthlyAmounts,
 				oneTimeFlexible,
+				monthlyFlexible,
 			}: StripeProducts) => {
 				return (
 					<Container>
@@ -99,12 +113,18 @@ const Products: React.FC<ProductsProps> = () => {
 								/>
 							</div>
 						</div>
-
 						{!oneTimeDonation ? (
-							// <div className={productsStyles.container}>
 							<Row>
+								<Col xs={12} sm={6} lg={4} xl={3}>
+									<ProductCard
+										option={monthlyFlexible}
+										recurring={true}
+										flexible={true}
+										planName="You Choose Plan"
+									/>
+								</Col>
 								{monthlyAmounts.edges.map(({ node: option }) => (
-									<Col xs={12} md={6} lg={4} key={option.id}>
+									<Col xs={12} sm={6} lg={4} xl={3} key={option.id}>
 										<ProductCard
 											option={option}
 											recurring={true}
