@@ -73,7 +73,7 @@ const Footer: React.FC<FooterProps> = ({ newsArray }) => {
 					</Col>
 				</Row>
 				<p className={footerStyles.copyright}>
-					&copy; Legal Aid Society of Birmingham
+					&copy; Legal Aid Society of Birmingham, 2020.
 				</p>
 				<p className={footerStyles.credit}>
 					Built in Birmingham by RL Web Design.
