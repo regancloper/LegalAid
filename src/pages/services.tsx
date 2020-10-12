@@ -41,6 +41,20 @@ const ServicesPage: React.FC<ServicesPageProps> = () => {
 					}
 				}
 			}
+			uwaaa: file(relativePath: { eq: "uwaaa-logo.png" }) {
+				childImageSharp {
+					fixed(width: 150) {
+						...GatsbyImageSharpFixed
+					}
+				}
+			}
+			bba: file(relativePath: { eq: "bba_logo.png" }) {
+				childImageSharp {
+					fixed(width: 250) {
+						...GatsbyImageSharpFixed
+					}
+				}
+			}
 		}
 	`);
 
@@ -141,7 +155,7 @@ const ServicesPage: React.FC<ServicesPageProps> = () => {
 							<Card className={servicesStyles.card}>
 								<Img
 									fixed={imageData.lsa.childImageSharp.fixed}
-									style={{ margin: '2.5em auto 0.7em auto' }}
+									style={{ margin: '2.5em auto 0.6em auto' }}
 								></Img>
 								<Card.Body>
 									Legal Services Alabama is a non-profit law firm providing free
@@ -170,9 +184,48 @@ const ServicesPage: React.FC<ServicesPageProps> = () => {
 									locating an attorney who can be retained to assist with their
 									general legal needs. Attorneys who participate in the Referrel
 									Service agree to charge not more than $50 for an initial 30
-									minute consultation. Following the initial consultation, the
-									potential client and referred attorney will negotiate a fee
-									for the services required.
+									minute consultation, and then negotiate a fee after the
+									consultation.
+								</Card.Body>
+							</Card>
+						</a>
+					</Col>
+					<Col xs={12} md={6} xl={4}>
+						<a href="https://www.uwaaa.org/" className={servicesStyles.link}>
+							<Card className={servicesStyles.card}>
+								<Img
+									fixed={imageData.uwaaa.childImageSharp.fixed}
+									style={{ margin: '1.2em auto -0.5em auto' }}
+								></Img>
+								<Card.Body>
+									Working with the Alabama Department of Senior Services, the
+									United Way Area Agency on Aging (UWAAA) of Jefferson County
+									provides services focused on the needs of elderly persons. The
+									UWAAA distributes funds for the provision of services, and has
+									a number of programs available to senior citizens, people with
+									disabilities, and caregivers.
+								</Card.Body>
+							</Card>
+						</a>
+					</Col>
+					<Col xs={12} md={6} xl={4}>
+						<a
+							href="https://birminghambar.org/page/Public_LawyerConnect"
+							className={servicesStyles.link}
+						>
+							<Card className={servicesStyles.card}>
+								<Img
+									fixed={imageData.bba.childImageSharp.fixed}
+									style={{ margin: '4.5em auto 1.8em auto' }}
+								></Img>
+								<Card.Body>
+									The Birmingham Bar Association's Lawyer Referral Service is a
+									public service connects citizens with pre-screened and
+									experienced attorneys free of charge (the participating
+									attorneys do charge for their services). During the initial
+									consultation, you will discuss legal fees required to handle
+									your matter, but there is no obligation on your part to retain
+									a particular lawyer.
 								</Card.Body>
 							</Card>
 						</a>
