@@ -43,7 +43,7 @@ const ServicesPage: React.FC<ServicesPageProps> = () => {
 			}
 			uwaaa: file(relativePath: { eq: "uwaaa-logo.png" }) {
 				childImageSharp {
-					fixed(width: 150) {
+					fixed(width: 130) {
 						...GatsbyImageSharpFixed
 					}
 				}
@@ -220,7 +220,7 @@ const ServicesPage: React.FC<ServicesPageProps> = () => {
 								></Img>
 								<Card.Body>
 									The Birmingham Bar Association's Lawyer Referral Service is a
-									public service connects citizens with pre-screened and
+									public service that connects citizens with pre-screened and
 									experienced attorneys free of charge (the participating
 									attorneys do charge for their services). During the initial
 									consultation, you will discuss legal fees required to handle

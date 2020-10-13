@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import { Container, Row, Col } from 'react-bootstrap';
 import PhoneIcon from '@material-ui/icons/Phone';
 import ExploreIcon from '@material-ui/icons/Explore';
+import Img from 'gatsby-image';
 
 import footerStyles from './footer.module.scss';
 import { NewsDataObject } from '../utils/types';
@@ -12,6 +13,18 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ newsArray }) => {
+	const imageData = useStaticQuery(graphql`
+		query {
+			uwca: file(relativePath: { eq: "united-way-logo.jpg" }) {
+				childImageSharp {
+					fixed(width: 160) {
+						...GatsbyImageSharpFixed
+					}
+				}
+			}
+		}
+	`);
+
 	return (
 		<footer className={footerStyles.footer}>
 			<Container>
@@ -72,6 +85,9 @@ const Footer: React.FC<FooterProps> = ({ newsArray }) => {
 						</div>
 					</Col>
 				</Row>
+				<a href="https://www.uwca.org/" target="_blank">
+					<Img fixed={imageData.uwca.childImageSharp.fixed} />
+				</a>
 				<p className={footerStyles.copyright}>
 					&copy; Legal Aid Society of Birmingham, 2020.
 				</p>
