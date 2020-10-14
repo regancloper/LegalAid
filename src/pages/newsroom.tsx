@@ -4,7 +4,7 @@ import { graphql, Link, useStaticQuery } from 'gatsby';
 import moment from 'moment';
 import Img from 'gatsby-image';
 
-import Head from '../components/head';
+import SEO from '../components/seo';
 import Layout from '../components/layout';
 import PageHeader from '../components/PageHeader';
 import newsroomStyles from './newsroom.module.scss';
@@ -55,7 +55,7 @@ const NewsroomPage: React.FC<NewsroomPageProps> = () => {
 
 	return (
 		<Layout>
-			<Head title="Newsroom" />
+			<SEO title="Newsroom" />
 			<Container>
 				<PageHeader text="Newsroom" />
 				<div className={newsroomStyles.description}>

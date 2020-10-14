@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 import Layout from '../components/layout';
+import SEO from '../components/seo';
 import articleStyles from './article.module.scss';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
@@ -29,6 +30,7 @@ const Article: React.FC<ArticleProps> = ({ data }) => {
 
 	return (
 		<Layout>
+			<SEO title={data.contentfulLegalAidNews.title} article={true} />
 			<Container>
 				<div
 					className="px-lg-5 my-4"

@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { Container } from 'react-bootstrap';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-import Head from '../components/head';
+import SEO from '../components/seo';
 import Layout from '../components/layout';
 import PageHeader from '../components/PageHeader';
 import missionStyles from './mission.module.scss';
@@ -37,7 +37,7 @@ const MissionPage: React.FC<MissionPageProps> = () => {
 
 	return (
 		<Layout>
-			<Head title="Our Mission" />
+			<SEO title="Our Mission" />
 			<Container>
 				<PageHeader text="Our Mission" />
 				<div className={missionStyles.content}>

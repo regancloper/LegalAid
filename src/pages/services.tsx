@@ -3,7 +3,7 @@ import { Card, Col, Container, Row } from 'react-bootstrap';
 import Img from 'gatsby-image';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Head from '../components/head';
+import SEO from '../components/seo';
 import Layout from '../components/layout';
 import PageHeader from '../components/PageHeader';
 import servicesStyles from './services.module.scss';
@@ -60,7 +60,7 @@ const ServicesPage: React.FC<ServicesPageProps> = () => {
 
 	return (
 		<Layout>
-			<Head title="Our Legal Services" />
+			<SEO title="Our Legal Services" />
 			<Container>
 				<PageHeader text="Our Legal Services" />
 				<h4 className={servicesStyles.header}>

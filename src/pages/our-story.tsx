@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS } from '@contentful/rich-text-types';
 
-import Head from '../components/head';
+import SEO from '../components/seo';
 import Layout from '../components/layout';
 import PageHeader from '../components/PageHeader';
 import storyStyles from './our-story.module.scss';
@@ -95,7 +95,7 @@ const StoryPage: React.FC<StoryPageProps> = () => {
 
 	return (
 		<Layout>
-			<Head title="Our Story" />
+			<SEO title="Our Story" />
 			<Container>
 				<PageHeader text="Our Story" />
 				<div className={storyStyles.content}>

@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
 import Layout from '../components/layout';
-import Head from '../components/head';
+import SEO from '../components/seo';
 import staffStyles from './staff.module.scss';
 import PageHeader from '../components/PageHeader';
 
@@ -97,7 +97,7 @@ const StaffPage: React.FC<StaffPageProps> = () => {
 
 	return (
 		<Layout>
-			<Head title="Our Staff" />
+			<SEO title="Our Staff" />
 			<Container>
 				<PageHeader text="Our Staff" />
 				<h5 className={staffStyles.staffSubheader}>Administrative Team</h5>

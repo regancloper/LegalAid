@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 
 import Layout from '../components/layout';
 import Products from '../components/Products/Products';
-import Head from '../components/head';
+import SEO from '../components/seo';
 import PageHeader from '../components/PageHeader';
 import donateStyles from './donate.module.scss';
 
@@ -12,7 +12,7 @@ interface DonateProps {}
 const Donate: React.FC<DonateProps> = () => {
 	return (
 		<Layout>
-			<Head title="Donate" />
+			<SEO title="Donate" />
 			<Container>
 				<PageHeader text="Donate" />
 				<div className={donateStyles.description}>

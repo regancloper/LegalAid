@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
-import Head from '../components/head';
+import SEO from '../components/seo';
 import PageHeader from '../components/PageHeader';
 import RoundedButton from '../components/RoundedButton';
 
@@ -12,7 +12,7 @@ interface ThankYouPageProps {}
 const ThankYouPage: React.FC<ThankYouPageProps> = () => {
 	return (
 		<Layout>
-			<Head title="Thank You" />
+			<SEO title="Thank You For Your Donation" />
 			<Container>
 				<PageHeader text="Thank You For Your Donation!" />
 				<div

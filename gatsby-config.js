@@ -4,9 +4,11 @@ require('dotenv').config({
 
 module.exports = {
 	siteMetadata: {
-		title: `Legal Aid Society`,
-		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-		author: `Regan Loper`,
+		title: `Legal Aid Society of Birmingham`,
+		description: `The Legal Aid Society of Birmingham is a non-profit organization that provides court-appointed legal aid in Birmingham, Alabama. Visit our donate page to give to the cause!`,
+		url: 'https://legalaidbirmingham.netlify.app', // No trailing slash allowed!
+		image: '/images/logo.jpg', // Path to your image you placed in the 'static' folder
+		author: `Legal Aid Society of Birmingham`,
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,

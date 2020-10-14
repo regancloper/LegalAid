@@ -5,6 +5,7 @@ import Img from 'gatsby-image';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 
 import Layout from '../components/layout';
+import SEO from '../components/seo';
 import staffMemberStyles from './staffMember.module.scss';
 
 interface StaffMemberProps {
@@ -26,6 +27,9 @@ const StaffMember: React.FC<StaffMemberProps> = ({ data }) => {
 
 	return (
 		<Layout>
+			<SEO
+				title={`${data.contentfulStaffMember.firstName} ${data.contentfulStaffMember.lastName} - Legal Aid Society of Birmingham`}
+			/>
 			<Container className={staffMemberStyles.body}>
 				<Row className="mt-5">
 					<Col xs={12} lg={5} className="mb-3">

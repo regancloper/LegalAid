@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Col, Container, Row } from 'react-bootstrap';
 
-import Head from '../components/head';
+import SEO from '../components/seo';
 import Layout from '../components/layout';
 import PageHeader from '../components/PageHeader';
 import boardStyles from './board.module.scss';
@@ -46,7 +46,7 @@ const BoardPage: React.FC<BoardPageProps> = () => {
 
 	return (
 		<Layout>
-			<Head title="Board of Trustees" />
+			<SEO title="Board of Trustees" />
 			<Container>
 				<PageHeader text="Board of Trustees" />
 				<h4 className={boardStyles.header}>Executive Committee</h4>

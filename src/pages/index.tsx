@@ -5,7 +5,7 @@ import BackgroundImage from 'gatsby-background-image';
 import { Col, Container, Row } from 'react-bootstrap';
 
 import Layout from '../components/layout';
-import Head from '../components/head';
+import SEO from '../components/seo';
 import indexStyles from './index.module.scss';
 import RoundedButton from '../components/RoundedButton';
 import ServicesOffered from '../components/ServicesOffered';
@@ -34,7 +34,7 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 
 	return (
 		<Layout>
-			<Head title="Home" />
+			<SEO title="Home" />
 			<div>
 				<BackgroundImage
 					className={indexStyles.hero}

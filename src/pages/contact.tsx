@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFax, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 import Layout from '../components/layout';
-import Head from '../components/head';
+import SEO from '../components/seo';
 import PageHeader from '../components/PageHeader';
 import contactStyles from './contact.module.scss';
 
@@ -13,7 +13,7 @@ interface ContactPageProps {}
 const ContactPage: React.FC<ContactPageProps> = ({}) => {
 	return (
 		<Layout>
-			<Head title="Contact" />
+			<SEO title="Contact" />
 			<Container>
 				<PageHeader text="Contact Us" />
 				<Row>

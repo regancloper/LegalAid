@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
-import Head from '../components/head';
+import SEO from '../components/seo';
 
 interface AboutPageProps {}
 
 const AboutPage: React.FC<AboutPageProps> = ({}) => {
 	return (
 		<Layout>
-			<Head title="About" />
+			<SEO title="About" />
 			<h1>The About Page</h1>
 			<p>
 				My name is Regan Loper. I'm a former bankruptcy attorney turned software
