@@ -85,7 +85,7 @@ const Footer: React.FC<FooterProps> = ({ newsArray }) => {
 						</div>
 					</Col>
 				</Row>
-				<a href="https://www.uwca.org/" target="_blank">
+				<a href="https://www.uwca.org/" target="_blank" rel="noopener">
 					<Img fixed={imageData.uwca.childImageSharp.fixed} />
 				</a>
 				<p className={footerStyles.copyright}>

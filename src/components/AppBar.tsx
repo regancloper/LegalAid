@@ -57,7 +57,7 @@ const ButtonAppBar: React.FC<ButtonAppBarProps> = ({ newsArray }) => {
 							<img
 								src={logo}
 								alt="Our logo"
-								style={{ width: '230px', height: '4.5rem' }}
+								style={{ width: '245px', height: '69.01px' }}
 							/>
 						</Link>
 						<TemporaryDrawer newsArray={newsArray} />
