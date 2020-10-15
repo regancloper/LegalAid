@@ -12,7 +12,7 @@ interface ThankYouPageProps {}
 const ThankYouPage: React.FC<ThankYouPageProps> = () => {
 	return (
 		<Layout>
-			<SEO title="Thank You For Your Donation" />
+			<SEO title="Thank You" />
 			<Container>
 				<PageHeader text="Thank You For Your Donation!" />
 				<div
