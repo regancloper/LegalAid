@@ -52,12 +52,15 @@ const ButtonAppBar: React.FC<ButtonAppBarProps> = ({ newsArray }) => {
 		<div className={classes.root}>
 			<AppBar position="fixed" className={classes.header}>
 				<Container>
-					<Toolbar className="justify-content-between">
+					<Toolbar
+						className="justify-content-between"
+						style={{ paddingLeft: 0 }}
+					>
 						<Link to="/">
 							<img
 								src={logo}
 								alt="Our logo"
-								style={{ width: '245px', height: '69.01px' }}
+								style={{ width: '235px', height: '66.2px' }}
 							/>
 						</Link>
 						<TemporaryDrawer newsArray={newsArray} />
