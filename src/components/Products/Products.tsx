@@ -22,7 +22,7 @@ const Products: React.FC<ProductsProps> = () => {
 						filter: {
 							recurring: { interval: { eq: null } }
 							product: { active: { eq: true } }
-							id: { ne: "price_1HRIelK9wC3K8Mfty2n0kRtI" }
+							id: { ne: "price_1HgbWoK9wC3K8MftgqciHQoL" }
 						}
 						sort: { fields: [unit_amount] }
 					) {
@@ -41,7 +41,7 @@ const Products: React.FC<ProductsProps> = () => {
 						}
 					}
 					oneTimeFlexible: stripePrice(
-						id: { eq: "price_1HRIelK9wC3K8Mfty2n0kRtI" }
+						id: { eq: "price_1HgbWoK9wC3K8MftgqciHQoL" }
 					) {
 						id
 						active
@@ -56,7 +56,7 @@ const Products: React.FC<ProductsProps> = () => {
 						filter: {
 							recurring: { interval: { eq: "month" } }
 							product: { active: { eq: true } }
-							id: { ne: "price_1HYzCkK9wC3K8MftNhNbxIEf" }
+							id: { ne: "price_1HgbVHK9wC3K8Mft3PJJ4Ua2" }
 						}
 						sort: { fields: [unit_amount] }
 					) {
@@ -75,7 +75,7 @@ const Products: React.FC<ProductsProps> = () => {
 						}
 					}
 					monthlyFlexible: stripePrice(
-						id: { eq: "price_1HYzCkK9wC3K8MftNhNbxIEf" }
+						id: { eq: "price_1HgbVHK9wC3K8Mft3PJJ4Ua2" }
 					) {
 						id
 						active
