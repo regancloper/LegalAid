@@ -62,7 +62,7 @@ const Article: React.FC<ArticleProps> = ({ data }) => {
 								</div>
 								<Img
 									fixed={data.contentfulLegalAidNews.picture.fixed}
-									style={{ borderRadius: '15px' }}
+									style={{ borderRadius: '15px', marginBottom: 20 }}
 								/>
 								<div className={articleStyles.content}>
 									{documentToReactComponents(
