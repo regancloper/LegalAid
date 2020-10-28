@@ -60,7 +60,7 @@ const NewsroomPage: React.FC<NewsroomPageProps> = () => {
 				<PageHeader text="Newsroom" />
 				<div className={newsroomStyles.description}>
 					Check out our organization's most recent articles, features on Legal
-					Aid Society's attorney, board, and staff, and relevant external
+					Aid Society's attorneys, board, and staff, and relevant external
 					publications for the legal aid community at large. Your one-stop
 					location for all recent news and updates for the Legal Aid Society of
 					Birmingham!
