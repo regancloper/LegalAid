@@ -104,12 +104,14 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 								The Legal Aid Society does not accept cases directly from the
 								public, but rather by court appointment. Our staff attorneys at
 								the Jefferson County Family Courts in Birmingham and Bessemer
-								serve children as guardians ad litem in abuse and neglect
-								(dependency) cases and as defense counsel in juvenile
-								delinquency cases. The Legal Aid Society's municipal court
-								attorneys represent indigent adult defendants in the Tarrant
-								Municipal Court. We also represent adult defendants in Jefferson
-								County Drug Court who participate in rehabilitation services.
+								serve children as{' '}
+								<span style={{ fontStyle: 'italic' }}>guardians ad litem</span>{' '}
+								in abuse and neglect (dependency) cases and as defense counsel
+								in juvenile delinquency cases. The Legal Aid Society's municipal
+								court attorneys represent indigent adult defendants in the
+								Tarrant Municipal Court. We also represent adult defendants in
+								Jefferson County Drug Court who participate in rehabilitation
+								services.
 							</p>
 						</Col>
 					</Row>
