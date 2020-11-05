@@ -80,9 +80,9 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 			<div className="mb-4">
 				<Container>
 					<Row>
-						<Col md={5}>
+						<Col md={6}>
 							<h3 className={indexStyles.headerTwo}>
-								We provide legal aid for those in need.
+								Advocating justice for all for over 60 years.
 							</h3>
 						</Col>
 					</Row>
@@ -91,10 +91,10 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 					<Row>
 						<Col md={8} lg={6}>
 							<p className={indexStyles.mainParas}>
-								We are a network of attorneys and staff that provide
-								court-appointed legal aid for children and low-income
-								individuals who need representation in family-law, juvenile
-								delinquency, and drug court cases.
+								The Legal Aid Society of Birmingham is a non-profit law firm
+								that represents children and low-income individuals who need
+								representation in dependency, juvenile delinquency, misdemeanor,
+								traffic and drug court cases.
 							</p>
 						</Col>
 					</Row>

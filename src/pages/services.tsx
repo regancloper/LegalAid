@@ -73,9 +73,9 @@ const ServicesPage: React.FC<ServicesPageProps> = () => {
 							only accept cases by court appointment, and are not hired directly
 							by members of the public who need legal assistance
 						</span>
-						. This means that we do not get involved in lawsuits until a court
-						decides that an individual involved in a legal proceeding needs to
-						be represented by a lawyer. As a result, the Legal Aid Society is
+						. This means that we do not get involved in cases until a judge
+						determines that an individual involved in a legal proceeding needs
+						to be represented by a lawyer. As a result, the Legal Aid Society is
 						not available for hire by the general public, including individuals
 						who would like to file a lawsuit and defendants in civil cases who
 						would like to have an attorney defend them.
@@ -88,7 +88,7 @@ const ServicesPage: React.FC<ServicesPageProps> = () => {
 					<ul>
 						<li>
 							<span style={{ fontWeight: 500, fontStyle: 'italic' }}>
-								Child Abuse and Child Neglect Cases:
+								Child Protection and Child Custody Cases:
 							</span>{' '}
 							Our staff attorneys at the Jefferson County Family Courts in
 							Birmingham and Bessemer serve children as{' '}

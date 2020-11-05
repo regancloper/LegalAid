@@ -63,7 +63,7 @@ const ServicesOffered: React.FC<ServicesOfferedProps> = () => {
 								onClick={() => setDisplay('childAbuse')}
 								variant={display === 'childAbuse' ? 'secondary' : 'light'}
 							>
-								Child Abuse and Neglect
+								Child Protection and Child Custody
 							</Button>
 						</Col>
 						<Col xs={6} md={4} lg={3} className="d-flex justify-content-center">
@@ -106,12 +106,15 @@ const ServicesOffered: React.FC<ServicesOfferedProps> = () => {
 						</Col>
 						<Col xs={12} md={6}>
 							<div className={servicesStyles.descriptionHeader}>
-								Child Abuse and Child Neglect
+								Child Protection and Child Custody
 							</div>
 							<hr />
 							<div>
-								We serve as guardians ad litem for children who are the subject
-								of abuse and neglect.
+								We serve as{' '}
+								<span style={{ fontStyle: 'italic' }}>guardians ad litem</span>{' '}
+								for children who are the subject of abuse and neglect
+								(dependency) in the Jefferson County Family Court Birmingham and
+								Bessemer Divisions.
 							</div>
 						</Col>
 					</Row>
@@ -153,8 +156,9 @@ const ServicesOffered: React.FC<ServicesOfferedProps> = () => {
 							</div>
 							<hr />
 							<div>
-								We also represent indigent adults in the municipal courts of
-								Birmingham and Tarrant.
+								We represent indigent adults in the municipal court of Tarrant.
+								Please contact us if your municipality is interested in learning
+								more about this service.
 							</div>
 						</Col>
 					</Row>
@@ -174,8 +178,9 @@ const ServicesOffered: React.FC<ServicesOfferedProps> = () => {
 							</div>
 							<hr />
 							<div>
-								Lastly, we assist those defendants who participate in the
-								Jefferson County Drug Court program.
+								We represent defendants who have chosen to participate in
+								rehabilitation services in the Jefferson County Drug Court
+								Program.
 							</div>
 						</Col>
 					</Row>

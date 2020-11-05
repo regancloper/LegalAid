@@ -31,6 +31,13 @@ const BoardPage: React.FC<BoardPageProps> = () => {
 				lastName
 				employer
 			}
+			director: contentfulBoardMember(
+				boardPosition: { eq: "Executive Director" }
+			) {
+				firstName
+				lastName
+				employer
+			}
 			members: allContentfulBoardMember(
 				filter: { boardPosition: { eq: "Member" } }
 				sort: { fields: lastName, order: ASC }
@@ -77,6 +84,13 @@ const BoardPage: React.FC<BoardPageProps> = () => {
 						<div className={boardStyles.employer}>
 							{data.secretary.employer}
 						</div>
+					</Col>
+					<Col xs={12}>
+						<div className={boardStyles.title}>Executive Director</div>
+						<div>
+							{data.director.firstName} {data.director.lastName}
+						</div>
+						<div className={boardStyles.employer}>{data.director.employer}</div>
 					</Col>
 				</Row>
 				<h4 className={boardStyles.header}>Members</h4>
