@@ -48,6 +48,16 @@ const BoardPage: React.FC<BoardPageProps> = () => {
 					employer
 				}
 			}
+			formerMembers: allContentfulFormerBoardMember(
+				sort: { fields: lastName, order: ASC }
+			) {
+				nodes {
+					firstName
+					lastName
+					employer
+					timePeriodServedOnBoard
+				}
+			}
 		}
 	`);
 
@@ -109,6 +119,29 @@ const BoardPage: React.FC<BoardPageProps> = () => {
 								{member.firstName} {member.lastName}
 							</div>
 							<div className={boardStyles.employer}>{member.employer}</div>
+						</Col>
+					))}
+				</Row>
+				<h4 className={boardStyles.header}>Former Trustees of Legal Aid</h4>
+				<Row
+					className={boardStyles.membersRow}
+					style={{ marginLeft: '15%', marginRight: '15%' }}
+				>
+					{data.formerMembers.nodes.map((member: any) => (
+						<Col
+							xs={12}
+							sm={6}
+							md={4}
+							className={boardStyles.membersColumn}
+							key={`${member.firstName}-${member.lastName}`}
+						>
+							<div>
+								{member.firstName} {member.lastName}
+							</div>
+							<div className={boardStyles.employer}>{member.employer}</div>
+							<div className={boardStyles.employer}>
+								{member.timePeriodServedOnBoard}
+							</div>
 						</Col>
 					))}
 				</Row>
