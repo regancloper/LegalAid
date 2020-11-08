@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			},
 			backgroundColor: '#076666',
 			color: '#fff',
-			minHeight: '100vh',
+			height: '150%',
 		},
 		fullList: {
 			width: 'auto',
