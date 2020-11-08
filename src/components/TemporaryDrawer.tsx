@@ -272,7 +272,7 @@ const TemporaryDrawer: React.FC<TemporaryDrawerProps> = ({ newsArray }) => {
 					</ListGroup>
 					<div className="d-flex justify-content-center my-4 mr-2">
 						<a
-							href="https://www.facebook.com/"
+							href="https://www.facebook.com/Legal-Aid-Society-of-Birmingham-110188515770212/"
 							style={{ textDecoration: 'none' }}
 						>
 							<FacebookIcon className={classes.facebookLink} />
