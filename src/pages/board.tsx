@@ -125,7 +125,7 @@ const BoardPage: React.FC<BoardPageProps> = () => {
 				<h4 className={boardStyles.header}>Former Trustees of Legal Aid</h4>
 				<Row
 					className={boardStyles.membersRow}
-					style={{ marginLeft: '15%', marginRight: '15%' }}
+					// style={{ marginLeft: '15%', marginRight: '15%' }}
 				>
 					{data.formerMembers.nodes.map((member: any) => (
 						<Col
@@ -138,7 +138,9 @@ const BoardPage: React.FC<BoardPageProps> = () => {
 							<div>
 								{member.firstName} {member.lastName}
 							</div>
-							<div className={boardStyles.employer}>{member.employer}</div>
+							<div className={boardStyles.formerEmployer}>
+								{member.employer}
+							</div>
 							<div className={boardStyles.employer}>
 								{member.timePeriodServedOnBoard}
 							</div>
