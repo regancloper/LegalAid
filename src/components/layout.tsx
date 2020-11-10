@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
-// import Header from './header';
 import AppBar from './AppBar';
 import Footer from './footer';
 import '../styles/index.scss';

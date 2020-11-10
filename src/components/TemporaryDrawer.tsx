@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
 			},
 			[theme.breakpoints.up('sm')]: {
 				width: 500,
-				objectFit: 'cover',
+				height: '150%',
 			},
 			backgroundColor: '#076666',
 			color: '#fff',
