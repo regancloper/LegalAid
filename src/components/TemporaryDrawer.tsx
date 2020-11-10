@@ -22,10 +22,10 @@ const useStyles = makeStyles((theme: Theme) =>
 			},
 			[theme.breakpoints.up('sm')]: {
 				width: 500,
+				objectFit: 'cover',
 			},
 			backgroundColor: '#076666',
 			color: '#fff',
-			height: '150%',
 		},
 		fullList: {
 			width: 'auto',
