@@ -1,0 +1,38 @@
+.section {
+	// height: 60vh;
+	display: flex;
+	align-items: center;
+	margin-bottom: 3em;
+	// background-color: white;
+}
+
+.header {
+	// color: #fff;
+	text-align: center;
+	// margin-top: 1.5em;
+	padding-top: 1.5em;
+	font-family: 'Abril Fatface', serif;
+	font-size: 3em;
+}
+
+.header::after {
+	content: '';
+	width: 7rem;
+	display: block;
+	border-bottom: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2rem;
+	margin-top: 1rem;
+}
+
+.text {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Fira Sans';
+	font-weight: 200;
+	margin-bottom: 2em;
+	font-size: 1.1em;
+}

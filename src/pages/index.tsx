@@ -9,6 +9,7 @@ import SEO from '../components/seo';
 import indexStyles from './index.module.scss';
 import RoundedButton from '../components/RoundedButton';
 import ServicesOffered from '../components/ServicesOffered';
+import AboutSection from '../components/AboutSection';
 
 interface IndexPageProps {}
 
@@ -118,6 +119,7 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 				</Container>
 			</div>
 			<ServicesOffered />
+			<AboutSection />
 			<div>
 				<BackgroundImage
 					className={indexStyles.secondHero}
