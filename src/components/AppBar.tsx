@@ -8,7 +8,6 @@ import { Link } from 'gatsby';
 // @ts-ignore
 import logo from '../images/logo.png';
 import { Container } from '@material-ui/core';
-import Banner from './Banner';
 import { NewsDataObject } from '../utils/types';
 
 interface ButtonAppBarProps {
@@ -52,12 +51,8 @@ const ButtonAppBar: React.FC<ButtonAppBarProps> = ({ newsArray }) => {
 
 	return (
 		<div className={classes.root}>
-			<Banner />
-			<AppBar
-				// position="fixed"
-				position="static"
-				className={classes.header}
-			>
+			{/* <Banner /> */}
+			<AppBar position="static" className={classes.header}>
 				<Container>
 					<Toolbar
 						className="justify-content-between"
