@@ -23,10 +23,10 @@ const AboutSection: React.FC<AboutSectionProps> = () => {
 				<Container>
 					<h3 className={styles.header}>Learn About Our Organization.</h3>
 					<div className={`${styles.text} mx-0 mx-md-5`}>
-						Learn a bit more about more about the Legal Aid Society of
-						Birmingham, and what each of its divisions do, by hearing from two
-						Legal Aid Society attorneys, Cassie Velardie and Gustavo Heudebert,
-						and social investigator Ashia Congress.
+						Learn a bit more about the Legal Aid Society of Birmingham, and what
+						each of its divisions do, by hearing from two Legal Aid Society
+						attorneys, Cassie Velardie and Gustavo Heudebert, and social
+						investigator Ashia Congress.
 					</div>
 					<div className="mx-0 mx-md-5">
 						<Video
