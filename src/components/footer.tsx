@@ -89,7 +89,7 @@ const Footer: React.FC<FooterProps> = ({ newsArray }) => {
 					<Img fixed={imageData.uwca.childImageSharp.fixed} />
 				</a>
 				<p className={footerStyles.copyright}>
-					&copy; Legal Aid Society of Birmingham, 2020.
+					&copy; Legal Aid Society of Birmingham, 2023.
 				</p>
 				<p className={footerStyles.credit}>
 					Built in Birmingham by RL Web Design.
