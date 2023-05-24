@@ -34,11 +34,11 @@ const Footer: React.FC<FooterProps> = ({ newsArray }) => {
 						<div className={`${footerStyles.lowerLevel} mr-5`}>
 							<div className="my-4">
 								<PhoneIcon className="mr-3" />
-								<span style={{ fontSize: '1.1em' }}>(205) 251-3516</span>
+								<span style={{ fontSize: '1.1em' }}>(205) 325-5475</span>
 							</div>
 							<div className="mt-4">
 								<ExploreIcon className="mr-3" />
-								<span style={{ fontSize: '1.1em' }}>2021 2nd Ave. N.</span>
+								<span style={{ fontSize: '1.1em' }}>2001 Park Place</span>
 								<div style={{ fontSize: '1.1em', marginLeft: 40 }}>
 									Birmingham, AL 35203
 								</div>
@@ -68,7 +68,7 @@ const Footer: React.FC<FooterProps> = ({ newsArray }) => {
 					<Col sm={6} md={4}>
 						<div className={footerStyles.topLevel}>RECENT NEWS</div>
 						<div className={footerStyles.lowerLevel}>
-							{newsArray.map(newsItem => (
+							{newsArray.map((newsItem) => (
 								<Link
 									to="/newsroom"
 									className={footerStyles.link}

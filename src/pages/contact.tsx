@@ -23,11 +23,11 @@ const ContactPage: React.FC<ContactPageProps> = ({}) => {
 								Administrative &amp; Municipal Courts Office
 							</div>
 							<div className={contactStyles.cardContent}>
-								<div>2021 2nd Avenue North</div>
+								<div>2001 Park Place</div>
 								<div>Birmingham, AL 35203</div>
 								<div>
 									<FontAwesomeIcon icon={faPhone} style={{ marginRight: 11 }} />{' '}
-									(205) 251-3516
+									(205) 325-5475
 								</div>
 								<div>
 									<FontAwesomeIcon icon={faFax} style={{ marginRight: 15 }} />
