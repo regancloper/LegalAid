@@ -47,8 +47,9 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 							<Col className={`d-none d-lg-block ${indexStyles.textDiv}`}>
 								<div className={indexStyles.imageText}>We Serve</div>
 								<div className={indexStyles.imageSubtext}>
-									We are court-appointed attorneys assisting people who need
-									legal representation.
+									Help us defend justice and provide skilled legal
+									representation for those in need - your donation makes a
+									difference.
 								</div>
 								<div className="mt-4">
 									<Link to="/donate">
@@ -65,8 +66,9 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 							>
 								<div className={indexStyles.lightImageText}>We Serve</div>
 								<div className={indexStyles.lightImageSubtext}>
-									We are court-appointed attorneys assisting people who need
-									legal representation.
+									Help us defend justice and provide skilled legal
+									representation for those in need - your donation makes a
+									difference.
 								</div>
 								<div className={indexStyles.lightButton}>
 									<Link to="/donate">
@@ -83,7 +85,7 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 					<Row>
 						<Col md={6}>
 							<h3 className={indexStyles.headerTwo}>
-								Advocating justice for all for over 60 years.
+								Advocating justice for all for over 70 years.
 							</h3>
 						</Col>
 					</Row>
@@ -92,27 +94,25 @@ const IndexPage: React.FC<IndexPageProps> = () => {
 					<Row>
 						<Col md={8} lg={6}>
 							<p className={indexStyles.mainParas}>
-								The Legal Aid Society of Birmingham is a non-profit law firm
-								that represents children and low-income individuals who need
-								representation in dependency, juvenile delinquency, misdemeanor,
-								traffic and drug court cases.
+								For more than 70 years, the Legal Aid Society of Birmingham
+								has provided skilled legal representation to children and
+								low-income individuals in dependency, juvenile delinquency,
+								misdemeanor, traffic, and drug court matters.
 							</p>
 						</Col>
 					</Row>
 					<Row>
 						<Col md={8} lg={6}>
 							<p className={indexStyles.mainParas}>
-								The Legal Aid Society does not accept cases directly from the
-								public, but rather by court appointment. Our staff attorneys at
-								the Jefferson County Family Courts in Birmingham and Bessemer
-								serve children as{' '}
+								Appointed by the courts, our attorneys advocate for children
+								as{' '}
 								<span style={{ fontStyle: 'italic' }}>guardians ad litem</span>{' '}
-								in abuse and neglect (dependency) cases and as defense counsel
-								in juvenile delinquency cases. The Legal Aid Society's municipal
-								court attorneys represent indigent adult defendants in the
-								Tarrant Municipal Court. We also represent adult defendants in
-								Jefferson County Drug Court who participate in rehabilitation
-								services.
+								in abuse and neglect cases and as defense counsel in juvenile
+								delinquency matters in the Jefferson County Family Courts in
+								Birmingham and Bessemer divisions. We also provide
+								representation for indigent adult defendants in certain
+								Municipal Courts and for participants in Jefferson County Drug
+								Court who are working toward rehabilitation.
 							</p>
 						</Col>
 					</Row>
